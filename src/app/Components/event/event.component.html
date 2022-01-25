@@ -1,0 +1,37 @@
+<div>
+    <div  class="event-list-container">
+      <div>
+        <div class="event-container">
+          <div class="title">
+            <i class="fa fa-briefcase"></i>
+            Event Name
+          </div>
+          <div class="details">
+            <a routerLink="/event/{{ eventObj.event_id }}">{{ eventObj.event_title }}</a>
+          </div>
+        </div>
+        <div class="date-container">
+          <div class="title">
+            <i class="fa fa-calendar"></i>
+            Date
+          </div>
+          <div class="details">
+            {{ eventObj.start_date }} - {{ eventObj.end_date }}
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="manager-container">
+          <div class="title">
+            <i class="fa fa-user"></i>
+            Manager
+          </div>
+          <div class="details">
+            {{ eventObj.manager }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+  

@@ -1,0 +1,27 @@
+.searchbox-container {
+    display: flex;
+    height: 100px;
+    background-color: rgba(169, 169, 169, 0.151);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.199);
+    justify-content: space-between;
+  }
+  
+  .searchbox-container p {
+    font-size: 28px;
+    font-weight: 100;
+    margin-left: 20px;
+    color: rgb(184, 112, 17);
+    align-self: center;
+  }
+  
+  .searchbox-container input {
+    width: 300px;
+    height: 35px;
+    padding-left: 10px;
+    font-size: 15px;
+    margin-right: 10%;
+    border: 1px solid rgba(128, 128, 128, 0.356);
+    border-radius: 4px;
+    align-self: center;
+  }
+  

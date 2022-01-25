@@ -1,0 +1,55 @@
+<div
+  class="side-section-container"
+  [ngStyle]="!sliderIconFlag ? { 'display': 'none' } : {}">
+  <div class="cross-icon">
+  <i
+    class="fa fa-times"
+    (click)="closeSlider() "></i>
+  </div>
+  <a [routerLink]="['personal']">
+  <div id="personal" [ngClass]="personalFlag ? 'active' : ''" (click)="personalTabClicked()">
+    <td>
+      <i class="fa fa-user"></i>
+    </td>
+    <td>
+      Personal Detail
+    </td>
+  </div>
+  </a>
+  <hr>
+  <a [routerLink]="['affiliation']">
+  <div id="affiliation" [ngClass]="affiliationFlag ? 'active' : ''" (click)="affiliationTabClicked()">
+    <td>
+      <i class="fa fa-university"></i>
+    </td>
+    <td>
+      Affiliation Details
+    </td>
+  </div>
+  </a>
+  <hr>
+  <a [routerLink]="['credential']">
+  <div id="credentials" [ngClass]="credentialsFlag ? 'active' : ''" (click)="credentialsTabClicked()">
+    <td>
+      <i class="fa fa-key"></i>
+    </td>
+    <td>
+      Credentials Details
+    </td>
+  </div>
+  </a>
+  </div>
+<div
+  class="slider-icon"
+  (click)="openSlider()">
+  &#9776;
+</div>
+<div
+  class="main-section-container"
+  (click)="closeSlider()">
+  <div class="title-header">
+    <div>My Profile</div>
+  </div>
+
+ <router-outlet></router-outlet>
+</div>

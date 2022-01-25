@@ -15,7 +15,17 @@ export class AuthenticationService {
   createUser(userInfo: Object) {
     return this.webReqService.post('signup', userInfo)
   }
+
   forgotPassword(userEmail: Object) {
     return this.webReqService.post('forgot-password', userEmail)
   }
+
+  verifyEmail(userToken: Object) {
+    return this.webReqService.post('verify-email', userToken)
+  }
+
+  resetPassword(passwordObj: Object) {
+    return this.webReqService.post('reset-password', passwordObj)
+  }
+  
 }

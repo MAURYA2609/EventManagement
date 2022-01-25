@@ -1,0 +1,54 @@
+<div class="user-detail-container">
+    <div class="title">
+      <div>Dashboard</div>
+      <div
+        class="block"
+        [ngStyle]="{ 'display': is_admin ? '' : 'none' }">
+        <button
+          (click)="blockUser()"
+          [ngStyle]="{'cursor': is_allowed ? '' : 'not-allowed'}">Block</button>
+      </div>
+    </div>
+    <div class="user-detail-content">
+      <div class="user-detail-display">
+        <div class="display-picture">
+          <div>{{ user_object.fullname[0] }}</div>
+        </div>
+        <div class="details">
+          <div id="fullname">{{ user_object.fullname }}</div>
+          <div id="auth-detail">
+            <div id="user-role">
+              {{ user_role }}
+            </div>
+            <div id="last-login">
+              <div>Last Login</div>
+              <div>{{ user_object.last_login_dt }}</div>
+            </div>
+          </div>
+          <div id="affiliation-name">
+            <i class="fa fa-users"></i>
+            <div>{{ user_object.affiliation_name }}</div>
+          </div>
+          <div id="affiliation-email">
+            <i class="fa fa-envelope"></i>
+            <div>{{ user_object.affiliation_email }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-button">
+        <button (click)="openSetting()"><i class="fa fa-cog"></i> Settings</button>
+      </div>
+    </div>
+    <div class="events-info">
+      <div id="title">Your events at hand</div>
+      <hr>
+      <div *ngFor="let event of user_object.events" id="details">
+        <div>
+          <div>{{ event.start_dt }}</div>
+          <div><a routerLink="/event/{{ event._id }}">{{ event.title }}</a></div>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+  

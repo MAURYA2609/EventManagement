@@ -1,0 +1,37 @@
+.title-header {
+  padding: 30px 10%;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.699);
+}
+
+.title-header div {
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.title-header hr {
+  height: 1px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.137);
+}
+
+.submit-button {
+  margin: 30px;
+}
+
+.current-details, .change-details {
+  padding: 30px 10%;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.699);
+}
+
+table {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+td {
+  padding-left: 10px;
+  font-style: italic;
+}

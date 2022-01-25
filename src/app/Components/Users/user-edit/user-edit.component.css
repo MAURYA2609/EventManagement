@@ -1,0 +1,110 @@
+.slider-icon {
+    width: 270px;
+    color: #246caf;
+    font-size: 30px;
+    padding: 20px;
+    cursor: pointer;
+  }
+  
+  .side-section-container {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .side-section-container::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  .slider-icon, .side-section-container {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .cross-icon {
+    display: flex;
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
+    justify-content: flex-end;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  hr {
+    border: none;
+    height: 0.5px;
+    background-color: rgb(212, 212, 212);
+  }
+  
+  .side-section-container div {
+    padding: 15px;
+    cursor: pointer;
+  }
+  
+  .side-section-container div td:nth-child(1) {
+    font-size: 18px;
+    color: #494949;
+    width: 40px;
+  }
+  
+  .side-section-container div td:nth-child(2) {
+    font-size: 16px;
+    font-weight: 200;
+    color: #494949;
+    vertical-align: top;
+  }
+  
+  #personal td, #contact td, #affiliation td, #credentials td {
+    color: #3979b4;
+    font-weight: 300;
+  }
+  
+  .active {
+    border-left: 3px solid #246caf;
+  }
+  
+  .sub-section-container div {
+    padding: 1px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #3979b4;
+  }
+  
+  .sub-section-container div:hover {
+    color: #3979b4b9;
+  }
+  
+  .main-section-container {
+    width: 100%;
+    height: calc(100% - 100px);
+  }
+  
+  .title-header {
+    display: flex;
+    margin: 30px 50px;
+    color: rgb(197, 66, 14);
+    font-size: 22px;
+    justify-content: space-between;
+  }
+  
+  button {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(247, 36, 36);
+    color: white;
+    padding: 7px 13px;
+    letter-spacing: 1px;
+  }
+  

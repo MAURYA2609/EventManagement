@@ -1,0 +1,42 @@
+<div class="affiliation-container">
+  <div
+    class="title-header">
+    <div>
+      Affiliation Details
+    </div>
+    <hr>
+  </div>
+  <div class="current-details">
+    <div>Current Affiliation:</div>
+    <table>
+      <tr>
+        <th>Affiliation Name:</th>
+        <td>{{ currentUserDetail.affiliation_name }}</td>
+      </tr>
+      <tr>
+        <th>Affiliation Email:</th>
+        <td>{{ currentUserDetail.affiliation_email }}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="change-details">
+    <div>Change Affiliation:</div>
+    <app-input-label
+      type="text"
+      name="affiliation_name"
+      text="Affiliation Name"
+      [value]="currentUserDetail.affiliation_name"
+      [btnClicked]="btnClicked"
+      (fetchData)="inputData($event)"></app-input-label>
+    <app-input-label
+      type="text"
+      name="affiliation_email"
+      text="Affiliation Email"
+      [value]="currentUserDetail.affiliation_email"
+      [btnClicked]="btnClicked"
+      (fetchData)="inputData($event)"></app-input-label>
+    <div class="submit-button">
+      <app-button-submit text="Submit" alignment="end" (btnClick)="buttonClicked()" (click)="editAffiliationDetail()"></app-button-submit>
+    </div>
+  </div>
+</div>

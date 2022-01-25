@@ -1,0 +1,269 @@
+<div #error_display>
+    <app-error-display errorText="{{ errorText }}" [isInvalid]="isInvalid"></app-error-display>
+  </div>
+  
+  <div class="create-event-container">
+    <div>
+      <p>Create Event</p>
+      <div class="label-input">
+        <table>
+          <tr class="event-title">
+            <td>
+              <label for="event-title">Event Title</label>
+              <span>*</span>
+            </td>
+            <td>
+              <input
+                type="text"
+                name="event_title"
+                id="event-title"
+                placeholder="Event Title"
+                [(ngModel)]="event_title"
+                (change)="addEventTitle(event_title)" />
+                <div
+                  [ngStyle]="{ 'display': showError.event_title ? null : 'none' }">
+                  <app-input-text-required name="Event Title"></app-input-text-required>
+                </div>
+            </td>
+          </tr>
+          <tr class="event-description">
+            <td>
+              <label for="event-description">Description</label>
+              <span>*</span>
+            </td>
+            <td>
+              <input
+                type="text"
+                name="event-description"
+                id="event-description"
+                placeholder="Description"
+                [(ngModel)]="event_description"
+                (change)="addEventDescription(event_description)"
+                style="width: 450px;">
+              <div
+                [ngStyle]="{ 'display': showError.event_description ? null : 'none' }">
+                <app-input-text-required name="Event Description"></app-input-text-required>
+              </div>
+            </td>
+          </tr>
+          <tr class="event-start">
+            <td>
+              <label for="event-start">Start</label>
+              <span>*</span>
+            </td>
+            <td>
+              <input
+                type="datetime-local"
+                name="event-start"
+                id="event-start"
+                [(ngModel)]="start_date"
+                (change)="addEventDates(start_date, 'start_date')" />
+                <div
+                  [ngStyle]="{ 'display': showError.start_date ? null : 'none' }">
+                  <app-input-text-required name="Start Date"></app-input-text-required>
+                </div>
+            </td>
+          </tr>
+          <tr class="event-end">
+            <td>
+              <label for="event-end">End</label>
+              <span>*</span>
+            </td>
+            <td>
+              <input
+                type="datetime-local"
+                name="event_end"
+                id="event-end"
+                [(ngModel)]="end_date"
+                (change)="addEventDates(end_date, 'end_date')" />
+                <div
+                  [ngStyle]="{ 'display': showError.end_date ? null : 'none' }">
+                  <app-input-text-required name="End Date"></app-input-text-required>
+                </div>
+            </td>
+          </tr>
+          <tr class="event-timezone">
+            <td>
+              <label for="event-timezone">Timezone</label>
+              <span>*</span>
+            </td>
+            <td>
+              <input
+                list="timezone-list"
+                id="event-timezone"
+                placeholder="Timezone"
+                [(ngModel)]="timezone"
+                (change)="addEventTimezone(timezone)">
+              <datalist id="timezone-list">
+                <option selected>
+                  - - - Select an Option - - -
+              </option>
+                <option *ngFor="let timezone of timezones" value="{{ timezone }}">{{ timezone }}</option>
+              </datalist>
+              <div
+                  [ngStyle]="{ 'display': showError.timezone ? null : 'none' }">
+                  <app-input-text-required name="Timezone"></app-input-text-required>
+                </div>
+            </td>
+          </tr>
+          <tr class="event-location">
+            <td>
+              <label for="event-location">Location</label>
+              <span>*</span>
+            </td>
+            <td>
+              <input
+                list="venue-list"
+                name="event_venue"
+                id="event-venue"
+                placeholder="Venue"
+                [(ngModel)]="venue"
+                (change)="addEventVenue(venue)" />
+              <datalist id="venue-list"></datalist>
+              <div
+                  [ngStyle]="{ 'display': showError.venue ? null : 'none' }">
+                  <app-input-text-required name="Venue"></app-input-text-required>
+                </div>
+              <input
+                list="room-list"
+                name="event_room"
+                id="event-room"
+                placeholder="Room"
+                [(ngModel)]="room"
+                (change)="addEventRoom(room)"/>
+              <datalist id="room-list"></datalist>
+            </td>
+          </tr>
+          <tr class="address">
+            <td>
+              <label for="event-address">Address</label>
+              <span>*</span>
+            </td>
+            <td>
+              <input
+                type="text"
+                name="event_address"
+                id="event-address"
+                placeholder="Address"
+                [(ngModel)]="address"
+                (change)="addEventAddress(address)" />
+                <div
+                  [ngStyle]="{ 'display': showError.address ? null : 'none' }">
+                  <app-input-text-required name="Address"></app-input-text-required>
+                </div>
+            </td>
+          </tr>
+          <tr class="map-url">
+            <td>
+              <label for="event-map-url">Map URL</label>
+            </td>
+            <td>
+              <input
+                type="text"
+                name="event_map-url"
+                id="event-map-url"
+                placeholder="Map Url"
+                [(ngModel)]="map_url"
+                (change)="addEventMapUrl(map_url)" />
+            </td>
+          </tr>
+          <tr class="additional_info">
+            <td>
+              <label for="additional_info">Additional Info</label>
+              <span>*</span>
+            </td>
+            <td>
+              <ckeditor [(ngModel)]="additional_info" (change)="addEventAdditionalInfo(additional_info)"></ckeditor>
+              <div
+                [ngStyle]="{ 'display': showError.additional_info ? null : 'none' }">
+                <app-input-text-required name="Event Description"></app-input-text-required>
+              </div>
+            </td>
+          </tr>
+          <tr class="event-label">
+            <td>
+              <label for="event-label">Label</label>
+            </td>
+            <td>
+              <input
+                type="text"
+                name="event-label"
+                id="event-label"
+                placeholder="Label"
+                [(ngModel)]="event_label"
+                (change)="addEventLabel(event_label)"
+                style="width: 450px;">
+            </td>
+          </tr>
+          <tr class="keywords">
+            <td>
+              <label for="event-keywords">Keywords</label>
+            </td>
+            <td>
+              <div id="keyword-insert">
+                <fieldset>
+                  <span>
+                    <input
+                      type="text"
+                      name="event_keyword"
+                      id="event-keyword"
+                      placeholder="Enter keywords"
+                      [(ngModel)]="keyword" />
+                  </span>
+                  <span>
+                    <button (click)="addEventKeywords(keyword)">Add</button>
+                  </span>
+                </fieldset>
+              </div>
+              <div id="keywords-display">
+                <div id="keywords" *ngFor="let keyword of keywords">
+                  {{ keyword }}
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="protection-mode">
+            <td>
+              <label for="protection-mode">Protection Mode</label>
+              <span>*</span>
+            </td>
+            <td>
+              <div class="protection-button">
+                <button
+                (click)="publicModeBtnClicked()"
+                [ngClass]="public ? 'active' : ''">Public</button>
+                <button
+                  (click)="inheritingModeBtnClicked()"
+                  [ngClass]="inheriting ? 'active' : ''">Inheriting</button>
+                <button
+                  (click)="protectedModeBtnClicked()"
+                  [ngClass]="protected ? 'active' : ''">Protected</button>
+              </div>
+              <div
+                class="public-mode-container"
+                [ngStyle]="{ 'display': (public || inheriting) ? null : 'none'  }">
+                <i class="fa fa-unlock-alt"></i>
+                <div id="text">
+                  <div><b>Public</b></div>
+                  <div>This event will be publicly available since the category <b>PSSI Conferences</b> is not protected.</div>
+                </div>
+              </div>
+              <div
+                class="protected-mode-container"
+                [ngStyle]="{ 'display': protected ? null : 'none'  }">
+                <i class="fa fa-lock"></i>
+                <div id="text">
+                  <div><b>Protected</b></div>
+                  <div>This event will only be accessible by the <b>managers</b> or <b>parent categories</b> and users you give access to.</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="submit">
+        <button (click)="nextButtonClicked()">Submit</button>
+      </div>
+    </div>
+  </div>
+  

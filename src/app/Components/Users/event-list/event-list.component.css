@@ -1,0 +1,29 @@
+a {
+    text-decoration: none;
+  }
+  
+  .new-event-link {
+    display: flex;
+    margin-top: 16px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    justify-content: end;
+  }
+  
+  .new-event-link  a {
+    color: #3b73bb;
+  }
+  
+  .new-event-link a:hover {
+    color:rgb(219, 141, 39);
+    transform: translateY(-2px);
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }

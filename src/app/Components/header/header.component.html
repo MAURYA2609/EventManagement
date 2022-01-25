@@ -1,0 +1,35 @@
+<header>
+    <div
+      class="header-container"
+      [ngStyle]="{'width': changeHeaderWidth ? '600px' : null}">
+      <p
+        (click)="redirectToMainPage()">
+        IPR
+      </p>
+      <div class="side-section-container">
+        <ng-container *ngIf="login; else elseBlock">
+          <div
+            id="username"
+            (mouseenter)="toggleHover()"
+            (mouseleave)="toggleHover()">{{ user_name }}</div>
+          <div
+            class="dropdown-content"
+            (mouseenter)="toggleHover()"
+            (mouseleave)="toggleHover()"
+            [ngClass]="isOpened ? 'open' : 'close'">
+            <i class="fa fa-user-circle"></i>
+            <a routerLink="/{{ user_username }}">Manage your Account</a>
+            <div>
+              <button (click)="logout()">Logout</button>
+            </div>
+          </div>
+        </ng-container>
+        <ng-template #elseBlock>
+          <ng-container *ngIf="isLoginRequired">
+            <a [routerLink]="'/login'">Login</a>
+          </ng-container>
+        </ng-template>
+      </div>
+    </div>
+  </header>
+  

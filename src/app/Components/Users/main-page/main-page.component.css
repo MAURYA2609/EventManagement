@@ -1,0 +1,15 @@
+
+
+.indroduction-container {
+    color: rgb(133, 133, 131);
+    font-size: 15px;
+    font-weight: 100;
+    text-align: justify;
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+a {
+  text-decoration: none;
+}

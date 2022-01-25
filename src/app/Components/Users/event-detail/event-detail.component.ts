@@ -1,0 +1,58 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { EventService } from 'src/app/services/event/event.service';
+
+@Component({
+  selector: 'app-event-detail',
+  templateUrl: './event-detail.component.html',
+  styleUrls: ['./event-detail.component.css']
+})
+export class EventDetailComponent implements OnInit {
+
+  isRequired = true
+  submitAbstractUrl = ""
+  manageEventUrl = ""
+  event_title = ""
+  event_duration = ""
+  event_timezone = ""
+  event_label = ""
+  start_dt = ""
+  end_dt = ""
+  event_address = ""
+  manager_contact_numbers: any
+  chairpersons = []
+  material_title = ""
+  event_description = ""
+  additional_info: any
+
+  constructor(private router: Router, private eventService: EventService) {
+    this.submitAbstractUrl = this.router.url + "/submit-abstract"
+    this.manageEventUrl = this.router.url + "/manage"
+    eventService.getEventDetails(this.router.url.split('/').pop()).subscribe(
+      data => {
+        this.setDataFromObj(data)
+        console.log(this.manager_contact_numbers)
+      },
+      error => {
+        console.log(error)
+      }
+    )
+  }
+
+  ngOnInit(): void {
+  }
+
+  setDataFromObj(data: any) {
+    this.event_title = data.event_title
+    this.event_duration = data.event_duration
+    this.event_timezone = data.event_timezone
+    this.event_label = data.event_label
+    this.event_address = data.event_address
+    this.manager_contact_numbers = data.manager_contact_numbers
+    this.event_description = data.event_description
+    this.start_dt = data.event_start_dt
+    this.end_dt = data.event_end_dt
+    this.additional_info = data.additional_info
+  }
+
+}

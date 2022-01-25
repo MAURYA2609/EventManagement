@@ -1,0 +1,96 @@
+<div>
+    <div class="title-header">
+      <div>
+        <div id="event-title">
+          {{ event_title }}
+        </div>
+        <div id="event-date">
+          <div id="event-duration">
+            {{ event_duration }}
+          </div>
+          <div id="event-timezone">
+            {{ event_timezone }}
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="edit-event-link"
+          [ngStyle]="{ 'visibility': isRequired ? 'visible' : 'hidden' }">
+          <a [routerLink]="manageEventUrl">Edit</a>
+        </div>
+        <input
+          name="searchbox"
+          placeholder="Enter your search term" />
+      </div>
+    </div>
+    <div class="event-body">
+      <div class="section-bar">
+        <div class="event-navigators">
+          <ul>
+            <li><a routerLink="/event/1">Overview</a></li>
+            <li><a routerLink="/event/1/programs">Scientific Program</a></li>
+            <li><a routerLink="/event/1/abstracts">Call for Abstracts</a></li>
+          </ul>
+        </div>
+        <div class="contacts">
+          <div id="contacts-title">Contact</div>
+          <div id="contacts-detail" *ngFor="let contact of manager_contact_numbers">
+            {{ contact }}
+          </div>
+        </div>
+      </div>
+      <div>
+        <div id="event-description">
+          {{ event_description }}
+        </div>
+        <div class="event-details">
+          <div id="date-time">
+            <div>
+              <i class="fa fa-clock-o"></i>
+            </div>
+            <div>
+              <b>Starts</b> {{ start_dt }}
+              <br>
+              <b>Ends</b> {{ end_dt }}
+              <p>{{ event_timezone }}</p>
+            </div>
+          </div>
+          <div id="location">
+            <div>
+              <i class="fa fa-map-marker"></i>
+            </div>
+            <div>
+              {{ event_address }}
+            </div>
+          </div>
+          <div id="chairpersons">
+            <div>
+              <i class="fa fa-users"></i>
+            </div>
+            <div *ngFor="let chairperson of chairpersons">
+              <a routerLink="#">{{ chairperson }}</a>
+            </div>
+          </div>
+          <div id="material">
+            <div>
+              <i class="fa fa-paperclip"></i>
+            </div>
+            <div>
+              <a href="#">{{ material_title }}</a>
+            </div>
+          </div>
+        </div>
+        <div class="event-information" [innerHtml]="additional_info">
+        </div>
+      </div>
+    </div>
+    <div class="abstract-submission-container">
+      <div class="abstract-submission-text">
+        <p>The call for abstracts is open</p>
+        <p>You can submit an abstract for reviewing</p>
+      </div>
+      <button type="submit" [routerLink]="submitAbstractUrl">Submit new abstract</button>
+    </div>
+  </div>
+  

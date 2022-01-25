@@ -1,0 +1,165 @@
+a {
+    color: rgba(52, 151, 190, 0.781);
+  }
+  
+  .user-detail-container {
+    margin: 30px auto;
+    padding: 0 50px;
+  }
+  
+  .title {
+    display: flex;
+    font-size: 24px;
+    font-weight: 100;
+    color: rgb(197, 66, 14);
+    justify-content: space-between;
+  }
+  
+  .title button {
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(247, 36, 36);
+    color: white;
+    padding: 7px 13px;
+    letter-spacing: 1px;
+  }
+  
+  .user-detail-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .user-detail-display {
+    display: flex;
+  }
+  
+  .display-picture {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border: 6px solid rgba(206, 204, 204, 0.685);
+    border-radius: 50%;
+    background-color: rgba(218, 94, 45, 0.685);
+    font-weight: 400;
+    font-size: 36px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #fullname {
+    color: rgba(44, 44, 44, 0.849);
+    font-weight: 500;
+    font-size: 17px;
+  }
+  
+  #auth-detail {
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  #user-role {
+    display: flex;
+    background-color: rgba(28, 120, 156, 0.856);
+    padding: 2px 8px;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    align-items: center;
+  }
+  
+  #last-login {
+    display: flex;
+    margin-left: 4px;
+    padding: 2px 8px;
+    background-color: rgba(128, 128, 128, 0.178);
+    font-size: 12px;
+    border-radius: 5px;
+  }
+  
+  #last-login div:nth-child(1) {
+    color: rgba(37, 37, 37, 0.747);
+    font-weight: 600;
+  }
+  
+  #last-login div:nth-child(2) {
+    color: rgba(97, 97, 97, 0.753);
+    margin-left: 10px;
+  }
+  
+  #affiliation-name, #affiliation-email {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    color: rgb(59, 59, 59);
+  }
+  
+  #affiliation-name div:nth-child(2), #affiliation-email div:nth-child(2) {
+    margin-left: 10px;
+  }
+  
+  .edit-button button {
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(73, 73, 73, 0.185);
+    color: rgba(80, 80, 80, 0.877);
+    font-weight: bold;
+    padding: 9px 15px;
+  }
+  
+  .edit-button i {
+    margin-right: 5px;
+    font-size: 16px;
+  }
+  
+  .events-info {
+    margin-top: 40px;
+    border: 2px solid rgba(0, 0, 0, 0.075);
+  }
+  
+  .events-info #title {
+    padding: 5px;
+    background-color: rgba(231, 231, 231, 0.377);
+    color: rgba(56, 56, 56, 0.719);
+    font-weight: 550;
+  }
+  
+  .events-info hr {
+    height: 1px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.075);
+  }
+  
+  .events-info #details {
+    display: flex;
+    padding: 10px;
+  }
+  
+  .events-info #details div:nth-child(1) {
+    display: flex;
+  }
+  
+  .events-info #details div:nth-child(1) div:nth-child(1) {
+    color: rgba(0, 0, 0, 0.411);
+    font-size: 12px;
+  }
+  
+  .events-info #details div:nth-child(1) div:nth-child(2) {
+    margin-left: 10px;
+    font-weight: 550;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .user-detail-display {
+      flex-direction: column;
+    }
+  
+    .display-picture {
+      margin-bottom: 30px;
+    }
+  }
+  

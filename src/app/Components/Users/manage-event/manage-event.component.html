@@ -1,0 +1,128 @@
+<div
+  class="side-section-container"
+  [ngStyle]="!sliderIconFlag ? { 'display': 'none' } : {}">
+  <div class="cross-icon">
+    <i
+      class="fa fa-times"
+      (click)="closeSlider() ">
+    </i>
+  </div>
+  <a [routerLink]="['material']">
+    <div id="material" [ngClass]="materialFlag ? 'active' : ''" (click)="materialTabClicked()">
+      <td>
+        <i class="fa fa-file-code-o"></i>
+      </td>
+      <td>
+        Material
+      </td>
+    </div>
+  </a>
+  <hr>
+  <a [routerLink]="['roles-setup']">
+    <div id="roles-setup" [ngClass]="rolesSetupFlag ? 'active' : ''" (click)="rolesSetupTabClicked()">
+      <td>
+        <i class="fa fa-users"></i>
+      </td>
+      <td>
+        Roles Setup
+      </td>
+    </div>
+  </a>
+  <hr>
+  <a [routerLink]="['logs']">
+    <div id="logs" [ngClass]="logsFlag ? 'active' : ''" (click)="logsTabClicked()">
+      <td>
+        <i class="fa fa-clipboard"></i>
+      </td>
+      <td>
+        Logs
+      </td>
+    </div>
+  </a>
+  <hr>
+  <div id="event" (click)="eventTabClicked()">
+    <td>
+      <i
+        class="fa fa-caret-right"
+        style="margin-right: 10px; font-size: 15px;"
+        [ngStyle]="{  'transform': eventFlag % 2 ? 'rotate(90deg)' : null }"></i>
+      <i class="fa fa-list-alt"></i>
+    </td>
+    <td>
+      Event
+      <div
+        class="sub-section-container"
+        [ngStyle]="{ 'display': eventFlag % 2 ? null : 'none' }">
+        <a [routerLink]="['settings']"><div (click)="eventTabTextClicked()">Event Setting</div></a>
+        <a [routerLink]="['permission']"><div (click)="eventTabTextClicked()">Event Permission</div></a>
+      </div>
+    </td>
+  </div>
+  <hr>
+  <div id="track" (click)="trackTabClicked()">
+    <td>
+      <i
+        class="fa fa-caret-right"
+        style="margin-right: 10px; font-size: 15px;"
+        [ngStyle]="{  'transform': trackFlag % 2 ? 'rotate(90deg)' : null }"></i>
+      <i class="fa fa-list-alt"></i>
+    </td>
+    <td>
+      Track
+      <div
+        class="sub-section-container"
+        [ngStyle]="{ 'display': trackFlag % 2 ? null : 'none' }">
+        <a [routerLink]="['tracks']"><div (click)="trackTabTextClicked()">Add New Track</div></a>
+        <a [routerLink]="['tracks/permission']"><div (click)="trackTabTextClicked()">Track Permission</div></a>
+      </div>
+    </td>
+  </div>
+  <hr>
+  <div id="abstract" (click)="abstractTabClicked()">
+    <td>
+      <i
+        class="fa fa-caret-right"
+        style="margin-right: 10px; font-size: 15px;"
+        [ngStyle]="{  'transform': abstractFlag % 2 ? 'rotate(90deg)' : null }"></i>
+      <i class="fa fa-list-alt"></i>
+    </td>
+    <td>
+      Abstract
+      <div
+        class="sub-section-container"
+        [ngStyle]="{ 'display': abstractFlag % 2 ? null : 'none' }">
+        <a [routerLink]="['abstracts']"><div (click)="abstractTabTextClicked()">Call For Abstract</div></a>
+        <a [routerLink]="['abstracts/review']"><div (click)="abstractTabTextClicked()">Review Abstract</div></a>
+      </div>
+    </td>
+  </div>
+</div>
+<!-- <div
+  class="side-section-container"
+  [ngStyle]="!sliderIconFlag ? { 'display': 'none' } : {}">
+  <div class="cross-icon">
+    <i
+      class="fa fa-times"
+      (click)="closeSlider() ">
+    </i>
+  </div>
+     -->
+<div
+  class="slider-icon"
+  (click)="openSlider()">&#9776;
+</div>
+<div
+  class="main-section-container"
+  (click)="closeSlider()">
+  <div class="event-display">
+    <span id="event-title">
+      {{ manageDetailObj.event_title }}
+    </span>
+    <span id="event-date">
+      {{ manageDetailObj.event_duration }}
+    </span>
+    <div id="created-by">Created by Indico Admin ({{ manageDetailObj.creator_email }})</div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+

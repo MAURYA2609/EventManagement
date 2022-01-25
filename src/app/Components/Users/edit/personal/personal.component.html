@@ -1,0 +1,70 @@
+<div class="personal-container">
+  <div
+    class="title-header">
+    <div>
+      Personal Details
+    </div>
+    <hr>
+  </div>
+  <div>
+    <app-input-label
+      type="text"
+      name="first_name"
+      text="First Name"
+      [value]="currentUserDetail.first_name"
+      [btnClicked]="btnClicked"
+      (fetchData)="inputData($event)"></app-input-label>
+    <app-input-label
+      type="text"
+      name="last_name"
+      text="Last Name"
+      [value]="currentUserDetail.last_name"
+      [btnClicked]="btnClicked"
+      (fetchData)="inputData($event)"></app-input-label>
+    <app-input-label
+      type="date"
+      name="dob"
+      text="Date of Birth"
+      [value]="currentUserDetail.dob"
+      [btnClicked]="btnClicked"
+      (fetchData)="inputData($event)"></app-input-label>
+    <app-input-label
+      type="text"
+      name="address_line1"
+      text="Address Line 1"
+      [value]="currentUserDetail.address_line1"
+      [btnClicked]="btnClicked"
+      (fetchData)="inputData($event)"></app-input-label>
+    <app-input-label
+      type="text"
+      name="address_line2"
+      text="Address Line 2"
+      [value]="currentUserDetail.address_line2"
+      [btnClicked]="btnClicked"
+      (fetchData)="inputData($event)"></app-input-label>
+    <app-input-label
+      type="text"
+      name="city"
+      text="City"
+      [value]="currentUserDetail.city"
+      [btnClicked]="btnClicked"
+      (fetchData)="inputData($event)"></app-input-label>
+    <app-input-label
+      type="text"
+      name="state"
+      text="State"
+      [value]="currentUserDetail.state"
+      [btnClicked]="btnClicked"
+      (fetchData)="inputData($event)"></app-input-label>
+    <app-input-label
+      type="text"
+      name="country"
+      text="Country"
+      [value]="currentUserDetail.country"
+      [btnClicked]="btnClicked"
+      (fetchData)="inputData($event)"></app-input-label>
+    <div class="submit-button">
+      <app-button-submit text="Submit" alignment="end" (btnClick)="buttonClicked()" (click)="editPersonalDetail()"></app-button-submit>
+    </div>
+  </div>
+</div>
