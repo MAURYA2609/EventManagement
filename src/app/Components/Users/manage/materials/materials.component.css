@@ -1,0 +1,121 @@
+@import "../manage.module.css";
+
+.material-container {
+  width: 600px;
+  margin: 30px auto;
+}
+
+.add-material {
+  display: flex;
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.253);
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.596);
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.add-material div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+
+.add-material button {
+  border: none;
+  background-color: rgba(105, 105, 105, 0.13);
+  padding: 10px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.596);
+}
+
+.add-material button:nth-child(1) {
+  margin-right: 7px;
+}
+
+.add-material-package{
+  display: flex;
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.253);
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.596);
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.add-material-package div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
+.add-material-package button {
+  border: none;
+  background-color: rgba(105, 105, 105, 0.13);
+  padding: 10px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.596);
+}
+
+.add-material div:nth-child(1) i, .add-material-package div:nth-child(1) i {
+  font-size: 25px;
+  margin-right: 15px;
+}
+
+.show-material {
+  display: flex;
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.253);
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.596);
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.show-material div:nth-child(2) {
+  color: rgba(0, 0, 0, 0.26);
+  font-size: 11px;
+}
+
+@media screen and (min-width: 860px) {
+  .material-container {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .material-container {
+    width: 500px
+  }
+
+  .add-material div:nth-child(1), .add-material-package div:nth-child(1) {
+    width: 250px;
+  }
+
+  button {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .material-container {
+    width: 400px;
+  }
+
+  .add-material, .add-material-package, .show-material {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .add-material div:nth-child(1), .add-material-package div:nth-child(1), .show-material div:nth-child(1) {
+    width: 100%;
+  }
+
+  .add-material div:nth-child(2), .add-material-package div:nth-child(2), .show-material div:nth-child(2) {
+    margin-top: 20px;
+  }
+
+}

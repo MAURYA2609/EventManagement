@@ -1,0 +1,40 @@
+<div class="roles-setup-container">
+  <div class="title-header">
+    Roles Setup
+    <hr>
+  </div>
+  <div class="roles-list" *ngFor="let role of rolesList">
+    <div class="role-container">
+      <div class="role" (click)="showMembersList()">
+        <div>
+          <div class="role-code" [ngStyle]="{ 'border-color': role.color, 'color': role.color }">
+            {{ role.code }}
+          </div>
+          <div class="role-name">
+            {{ role.name }}
+          </div>
+        </div>
+        <div>
+          <div class="role-members-count">
+            <i class="fa fa-users"></i> {{ !role.member ? 0 : role.member.length > 0 ? role.member.length : 0 }} Person
+          </div>
+          <div class="action-buttons">
+            <i class="fa fa-edit" (click)="updateRole(role._id)"></i>
+            <i class="fa fa-trash" (click)="deleteRole(role._id)"></i>
+          </div>
+        </div>
+      </div>
+      <div class="role-members" *ngIf="showRoleMembers">
+        <div class="members" *ngFor="let member of role.member">
+          <i class="fa fa-user"></i>{{ member.name }}<i class="fa fa-times" (click)="deleteMember(member._id, role._id)"></i>
+        </div>
+        <div class="add-user-btn">
+          <button (click)="addMember(role._id)"><i class="fa fa-plus"></i>Add User</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-container">
+    <button (click)="addRole()"><i class="fa fa-plus"></i> Add Role</button>
+  </div>
+</div>

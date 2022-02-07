@@ -1,0 +1,22 @@
+<div class="abstract-detail-container">
+    <div>
+      <div>
+        <i class="fa fa-id-badge"></i>
+      </div>
+      <div>
+        <strong>Abstracts</strong>
+      </div>
+      <div>
+        {{ abstractDetailObj.action }} to abstract #{{ abstractDetailObj.abstract_id }} <a routerLink="['']">({{ abstractDetailObj.abstract_title }})</a>
+      </div>
+    </div>
+    <div>
+      <div>
+        {{ abstractDetailObj.abstract_submission_diff }}
+      </div>
+      <div>
+        {{ abstractDetailObj.abstract_author[0] }}
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,43 @@
+<div class="logs-container">
+  <div class="title-header">
+    <div>Logs</div>
+    <hr>
+  </div>
+  <div class="abstract-tools">
+    <div class="abstract-searchbox">
+      <div id="searchbox">
+        <input type="text" name="searchbox" placeholder="Enter title string" (keyup)="searchAbstract($event)">
+        <i class="fa fa-search"></i>
+      </div>
+    </div>
+    <div class="d-flex flex-row-reverse bd-highlight mb-2">
+      <div class="p-2 bd-highlight">
+        <select (change)="onPageLimitChanged($event)" class="custom-select">
+          <option *ngFor="let size of pageLimits" [ngValue]="size">
+            {{ size }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <!--<div class="abstract-list">
+    <div
+      *ngFor="let abstractDetail of abstractDetails | paginate : {
+        itemsPerPage: pageLimit,
+        currentPage: page,
+        totalItems: count
+      };
+      let i = index">
+      <app-abstract-detail [abstractDetailObj]="abstractDetail"></app-abstract-detail>
+      <hr>
+    </div>
+  </div>
+  <div class="abstract-pagination">
+    <pagination-controls
+      [responsive]="true"
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onPageChanged($event)">
+    </pagination-controls>
+  </div> -->
+</div>

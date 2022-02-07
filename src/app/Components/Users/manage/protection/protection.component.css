@@ -1,0 +1,28 @@
+@import "../manage.module.css";
+
+.protection-content {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.protection-content div:nth-child(1) {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.61);
+}
+
+.permission-list {
+  margin: 30px 0;
+  padding-left: 10px;
+  border-left: 2px solid rgba(0, 0, 0, 0.171);
+}
+
+
+.add-permission button {
+  height: 35px;
+  border: none;
+  background-color: rgba(105, 105, 105, 0.13);
+  padding: 10px;
+  margin-right: 6px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.596);
+}

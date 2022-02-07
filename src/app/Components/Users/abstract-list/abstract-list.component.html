@@ -1,0 +1,53 @@
+<div class="abstract-list-container">
+    <div class="title-header">
+      <div>List of Abstracts</div>
+      <hr>
+    </div>
+    <div class="operations-container">
+      <div id="searchbox">
+        <input type="text" name="searchbox" placeholder="Enter title string" (keyup)="searchAbstract($event)">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="d-flex flex-row-reverse bd-highlight mb-2">
+        <div class="p-2 bd-highlight">
+          <select (change)="onPageLimitChanged($event)" class="custom-select">
+            <option *ngFor="let size of pageLimits" [ngValue]="size">
+              {{ size }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="abstract-list">
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Accepted Track</th>
+          <th>Submitted for Tracks</th>
+          <th>Reviewed for Tracks</th>
+          <th>Accepted Type</th>
+          <th>Submitted Type</th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let abstract of abstractList ">
+          <td id="id">{{abstract.id}}</td>
+          <td id="title"><a [routerLink]="">{{abstract.title}}</a></td>
+          <td
+            id="status"
+            [ngStyle]="{ 'border-color': abstract.is_accepted ? 'green' : abstract.is_rejected ? 'red' : 'grey', 'color': abstract.is_accepted ? 'green' : abstract.is_rejected ? 'red' : 'grey' }">
+            <div>{{abstract.status}}</div>
+          </td>
+          <td id="accepted-track">{{abstract.accepted_track}}</td>
+          <td id="submitted-track">{{abstract.submitted_track}}</td>
+          <td id="reviewed-track">{{abstract.reviewed_track}}</td>
+          <td id="accepted-type">{{abstract.accepted_type}}</td>
+          <td id="submitted-type">{{abstract.submitted_type}}</td>
+          <td id="icon"><i class="fa fa-long-arrow-right"></i></td>
+        </tr>
+      </table>
+    </div>
+    
+  </div>
+  

@@ -7,6 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { HttpClientModule } from '@angular/common/http';
+import { ManageModule } from './Components/Users/manage/manage.module';
+import { DialogModule } from './Components/dialog/dialog.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     RecaptchaModule,
     RecaptchaFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    ManageModule,
+    DialogModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

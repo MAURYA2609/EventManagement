@@ -1,0 +1,107 @@
+@import "../manage.module.css";
+
+.role-container {
+  border: 1px solid rgba(0, 0, 0, 0.158);
+  margin-top: 20px;
+}
+
+.role {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.role div {
+  display: flex;
+  align-items: center;
+}
+
+.role-code {
+  border: 1px solid;
+  padding: 5px 8px;
+}
+
+.role-name {
+  font-size: 14px;
+  color: rgb(80, 80, 80);
+  font-weight: 100;
+  margin-left: 40px;
+}
+
+.role-members-count {
+  border: 1px solid rgb(71, 141, 207);
+  padding: 7px 10px;
+  color: rgb(42, 121, 196);
+  margin-right: 30px;
+}
+
+.action-buttons i {
+  font-size: 22px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.action-buttons i:nth-child(1) {
+  color: rgba(0, 0, 0, 0.425);
+}
+
+.action-buttons i:nth-child(2) {
+  color: red;
+}
+
+.role-members {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 140px;
+  padding: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.158);
+  border-left: 60px solid rgba(0, 0, 0, 0.089);
+}
+
+.members {
+  border: 1px solid;
+  padding: 5px 10px;
+  margin-right: 10px;
+  height: 30px;
+  color: rgb(42, 121, 196);
+}
+
+.members i:nth-child(1) {
+  margin-right: 6px;
+  color: rgb(42, 121, 196);
+}
+
+.members i:nth-child(2) {
+  margin-left: 10px;
+  color: red;
+  cursor: pointer;
+}
+
+.add-user-btn {
+  width: 100%;
+  height: calc(100% - 20px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.add-user-btn button {
+  border: none;
+  background-color: rgba(80, 80, 80, 0.219);
+  padding: 10px;
+  color: rgb(71, 141, 207);
+  font-size: 14px;
+}
+
+.add-user-btn i {
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 700px) {
+  .roles-setup-container {
+    width: 70%;
+  }
+}

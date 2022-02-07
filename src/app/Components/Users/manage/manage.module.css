@@ -1,0 +1,38 @@
+button {
+  cursor: pointer;
+}
+
+.call-for-abstract-container, .event-protection-container, .roles-setup-container {
+  width: 670px;
+  margin: 30px auto;
+}
+
+.title-header {
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.678);
+}
+
+.title-header hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.11);
+  margin-top: 5px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.btn-container button {
+  border: none;
+  background-color: rgb(71, 141, 207);
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+}
+
+.btn-container i {
+  margin-right: 5px;
+}

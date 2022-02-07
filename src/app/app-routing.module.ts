@@ -30,6 +30,16 @@ import { EventListComponent } from './Components/Users/event-list/event-list.com
 import { InputTextRequiredComponent } from './Components/input-text-required/input-text-required.component';
 import { EventComponent } from './Components/event/event.component';
 import { AdminAuthGuard } from './services/admin-auth.guard';
+import { AbstractListComponent } from './Components/Users/abstract-list/abstract-list.component';
+import { AbstractDetailComponent } from './Components/abstract-detail/abstract-detail.component';
+import { SettingsComponent } from './Components/Users/manage/settings/settings.component';
+import { ProtectionComponent } from './Components/Users/manage/protection/protection.component';
+import { MaterialsComponent } from './Components/Users/manage/materials/materials.component';
+import { RolesSetupComponent } from './Components/Users/manage/roles-setup/roles-setup.component';
+import { CallForAbstractComponent } from './Components/Users/manage/call-for-abstract/call-for-abstract.component';
+import { LogComponent } from './Components/Users/manage/log/log.component';
+import { TracksComponent } from './Components/Users/manage/tracks/tracks.component';
+import { TrackPermissionComponent } from './Components/Users/manage/track-permission/track-permission.component';
 
 const routes: Routes = [
   {
@@ -59,7 +69,7 @@ const routes: Routes = [
   {
     path: 'category/:id/create-event',
     component: CreateNewEventComponent,
-    /**canActivate: [AdminAuthGuard]**/
+    //canActivate: [AdminAuthGuard]
   },
   {
     path: 'category/:id',
@@ -102,7 +112,53 @@ const routes: Routes = [
         component: CredentialsComponent
       }
     ]
-  }
+  },
+  {
+    path: 'event/:id/manage',
+    component: ManageEventComponent,
+    // canActivate: [AdminAuthGuard],
+    children: [
+      
+      {
+        path: 'abstracts/list',
+        component: AbstractListComponent
+      }
+     ,
+      {
+        path: 'settings',
+        component: SettingsComponent,
+      },
+      {
+        path: 'permission',
+        component: ProtectionComponent,
+      },
+      {
+        path: 'material',
+        component: MaterialsComponent,
+      },
+      {
+        path: 'roles-setup',
+        component: RolesSetupComponent,
+      },
+      {
+        path: 'abstracts',
+        component: CallForAbstractComponent,
+      },
+      
+      {
+        path: 'logs',
+        component: LogComponent,
+      },
+      {
+        path: 'tracks',
+        component: TracksComponent
+      },
+      {
+        path: 'tracks/permission',
+        component: TrackPermissionComponent
+      }
+    ]
+  },
   
 ];
 
@@ -122,5 +178,7 @@ export const routingModule = [
   ,ForgotPasswordComponent , HeaderComponent , FooterComponent , MainPageComponent ,SearchbarComponent,
   CategoryComponent, ResetPasswordComponent, VerifyEmailComponent, UserDetailComponent, UserEditComponent ,
   PersonalComponent, AffiliationComponent , CredentialsComponent, ShowErrorComponent , CreateNewEventComponent,
-  EventDetailComponent, ManageEventComponent, EventListComponent ,InputTextRequiredComponent ,EventComponent
+  EventDetailComponent, ManageEventComponent, EventListComponent ,InputTextRequiredComponent ,EventComponent ,
+  AbstractListComponent ,AbstractDetailComponent/*, SettingsComponent , ProtectionComponent ,MaterialsComponent ,RolesSetupComponent ,
+  CallForAbstractComponent ,LogComponent ,TracksComponent , TrackPermissionComponent*/
 ]

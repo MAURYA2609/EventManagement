@@ -1,0 +1,52 @@
+@import "../manage.module.css";
+
+.tracks-container {
+  width: 800px;
+  margin: 30px auto;
+}
+
+.track-list {
+  margin: 20px 10px;
+}
+
+.track {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#track-name {
+  font-size: 18px;
+  color: rgb(212, 69, 59);
+}
+
+.operations {
+  display: flex;
+  align-items: center;
+}
+
+#view, #edit {
+  color: rgba(31, 119, 201, 0.815);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#view:hover, #edit:hover {
+  text-decoration: underline;
+  color: rgba(24, 99, 168, 0.815);
+}
+
+#edit {
+  margin: 0 14px;
+}
+
+#delete {
+  color: red;
+  font-size: 21px;
+  cursor: pointer;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}

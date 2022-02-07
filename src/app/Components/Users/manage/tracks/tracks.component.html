@@ -1,0 +1,19 @@
+<div class="tracks-container">
+  <div class="title-header">
+    <div>Tracks</div>
+    <hr>
+  </div>
+  <div class="track-list" *ngFor="let track of tracksList">
+    <div class="track">
+      <div id="track-name">{{ track.title }}</div>
+      <div class="operations">
+        <!--<div id="view" (click)="onViewClicked(track)">View</div>-->
+        <div id="edit" (click)="onEditClicked(track)">Edit</div>
+        <div id="delete"><i class="fa fa-trash" (click)="onDeleteClicked(track._id)"></i></div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-container">
+    <button (click)="addNewTrack()"><i class="fa fa-plus"></i> Add Track</button>
+  </div>
+</div>

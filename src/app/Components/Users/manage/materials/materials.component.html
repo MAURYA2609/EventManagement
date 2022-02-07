@@ -1,0 +1,42 @@
+<div class="material-container">
+  <div class="title-header">
+    Materials
+    <hr>
+  </div>
+  <div class="material-content">
+    <div class="add-material">
+      <div>
+        <i class="fa fa-upload"></i>
+        <div>
+          <strong>Add Material to the event.</strong>
+          <div>You can attack files or links using the buttons on the right.</div>
+        </div>
+      </div>
+      <div>
+        <button (click)="fileInput.click()"><i class="fa fa-sticky-note"></i> Upload Files</button>
+        <input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file" accept=".doc, .docx, .pdf">
+        <button><i class="fa fa-link"></i> Add Link</button>
+      </div>
+    </div>
+    <div class="add-material-package">
+      <div>
+        <i class="fa fa-file-archive-o"></i>
+        <div>
+          <strong>Generate a material package.</strong>
+          <div>You can generate a ZIP file containing materials from the event.</div>
+        </div>
+      </div>
+      <div>
+        <button (click)="packageInput.click()"><i class="fa fa-file-archive-o"></i> Material Package</button>
+        <input hidden (change)="onPackageSelected($event)" #packageInput type="file" id="package">
+      </div>
+    </div>
+    <div
+      class="show-material"
+      *ngFor="let material of materials"
+      (click)="viewMaterial(material.uuid)">
+      <div>{{ material.name }}</div>
+      <div>{{ material.dt }}</div>
+    </div>
+  </div>
+</div>

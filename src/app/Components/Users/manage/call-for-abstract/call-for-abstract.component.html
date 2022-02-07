@@ -1,0 +1,91 @@
+<div class="call-for-abstract-container">
+  <div class="title-header">
+    <div>Call for Abstracts</div>
+    <hr>
+  </div>
+  <div class="abstract-content">
+    <div class="abstract-config abstract-deadline">
+      <div>
+        <i class="fa fa-file"></i>
+        <div>
+          <div><strong>The call for abstracts is closed.</strong></div>
+          <div>Closed on <strong>{{ date }}</strong> at <strong>{{ deadline }}</strong> {{ timezone }}</div>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button (click)="rescheduleBtn()" id="reschedule-btn" *ngIf="created"><i class="fa fa-clock"></i> Reschedule</button>
+        <button (click)="reopenBtn()" id="reopen-btn" *ngIf="created && !is_open">Reopen</button>
+        <button (click)="openBtn()" id="open-btn" *ngIf="!created && !is_open">Open</button>
+        <button (click)="closeBtn()" id="close-btn"*ngIf="created && is_open">Close</button>
+      </div>
+      <div>
+
+      </div>
+    </div>
+    <div class="abstract-submission-handling">
+      <div class="abstract-config">
+        <div>
+          <i class="fa fa-upload"></i>
+          <div>
+            <div><strong>Submission</strong></div>
+            <div>Configure general submission settings and email notification templates.</div>
+          </div>
+        </div>
+        <div>
+          <button><i class="fa fa-cog"></i> Settings</button>
+        </div>
+      </div>
+      <hr>
+      <div class="abstract-config">
+        <div>
+          <i class="fa fa-wrench"></i>
+          <div>
+            <div><strong>Fields and types</strong></div>
+            <div>Configure the contribution types and abstract fields.</div>
+          </div>
+        </div>
+        <div>
+          <button>Abstract Fields</button>
+        </div>
+      </div>
+      <hr>
+      <div class="abstract-config">
+        <div>
+          <i class="fa fa-check-square-o"></i>
+          <div>
+            <div><strong>Reviewing</strong></div>
+            <div>Configure the reviewing questions and answer, the reviewing teams, etc.</div>
+          </div>
+        </div>
+        <div>
+          <button class="fa fa-cog"><i></i> Settings</button>
+        </div>
+      </div>
+      <hr>
+      <div class="abstract-config">
+        <div>
+          <i class="fa fa-book"></i>
+          <div>
+            <div><strong>Book of abstracts</strong></div>
+            <div>Customize and download the book of abstracts.</div>
+          </div>
+        </div>
+        <div>
+          <button><i class="fa fa-upload"></i> Upload PDF</button>
+        </div>
+      </div>
+    </div>
+    <div class="abstract-config list-of-abstract">
+      <div>
+        <i class="fa fa-list"></i>
+        <div>
+          <div><strong>List of abstracts</strong></div>
+          <div>View and perform actions on abstracts</div>
+        </div>
+      </div>
+      <div>
+        <button (click)="openAbstractList()"><i class="fa fa-cog"></i> Manage</button>
+      </div>
+    </div>
+  </div>
+</div>
