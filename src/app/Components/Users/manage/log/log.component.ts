@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { AbstractService } from 'src/app/services/abstract/abstract.service';
-import { NotificationService } from 'src/app/services/notification/notification.service';
+//import { NotificationService } from 'src/app/services/notification/notification.service';
 
 @Component({
   selector: 'app-log',
@@ -25,7 +25,7 @@ export class LogComponent implements OnInit {
   constructor(
     private router: Router,
     private cookie: CookieService,
-    private notificationService: NotificationService,
+    //private notificationService: NotificationService,
     private abstractService: AbstractService
   ) {
     this.event_id = this.router.url.split("/")[2]
@@ -44,13 +44,13 @@ export class LogComponent implements OnInit {
       data => {
         if (data.hasOwnProperty("message")) {
           this.fetchData(data)
-          this.notificationService.showInfo(this.message, "Info")
+          //this.notificationService.showInfo(this.message, "Info")
         } else {
           this.abstractDetails = data
         }
       },
       error => {
-        this.notificationService.showError(error.error.error, "Error")
+        //this.notificationService.showError(error.error.error, "Error")
       }
     )
   }

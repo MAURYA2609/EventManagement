@@ -1,6 +1,6 @@
 export interface RegisterUser {
-  first_name: string
-  last_name: string
+  fname: string
+  lname: string
   dob: string
   address_line1: string
   address_line2: string
@@ -9,7 +9,7 @@ export interface RegisterUser {
   country: string
   primary_phone_number: string
   alternate_phone_number: string
-  primary_email_address: string
+  email: string
   alternate_email_address: string
   affiliation_name: string
   affiliation_email_address: string

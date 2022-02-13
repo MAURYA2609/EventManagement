@@ -27,11 +27,12 @@ export class EventDetailComponent implements OnInit {
 
   constructor(private router: Router, private eventService: EventService) {
     this.submitAbstractUrl = this.router.url + "/submit-abstract"
+    console.log(this.submitAbstractUrl)
     this.manageEventUrl = this.router.url + "/manage"
     eventService.getEventDetails(this.router.url.split('/').pop()).subscribe(
       data => {
+        console.log(data)
         this.setDataFromObj(data)
-        console.log(this.manager_contact_numbers)
       },
       error => {
         console.log(error)
@@ -43,15 +44,15 @@ export class EventDetailComponent implements OnInit {
   }
 
   setDataFromObj(data: any) {
-    this.event_title = data.event_title
+    this.event_title = data.title
     this.event_duration = data.event_duration
-    this.event_timezone = data.event_timezone
+    this.event_timezone = data.timezone
     this.event_label = data.event_label
-    this.event_address = data.event_address
+    this.event_address = data.address
     this.manager_contact_numbers = data.manager_contact_numbers
-    this.event_description = data.event_description
-    this.start_dt = data.event_start_dt
-    this.end_dt = data.event_end_dt
+    this.event_description = data.description
+    this.start_dt = data.start_time
+    this.end_dt = data.end_time
     this.additional_info = data.additional_info
   }
 

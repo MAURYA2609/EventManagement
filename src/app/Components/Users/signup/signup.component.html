@@ -8,14 +8,14 @@
           <hr>
           <app-input-label
             type="text"
-            name="first_name"
+            name="fname"
             text="First Name"
             [isRequired]="true"
             [btnClicked]="btnClicked"
             (fetchData)="inputData($event)"></app-input-label>
           <app-input-label
             type="text"
-            name="last_name"
+            name="lname"
             text="Last Name"
             [isRequired]="true"
             [btnClicked]="btnClicked"
@@ -80,7 +80,7 @@
             (fetchData)="inputData($event)"></app-input-label>
           <app-input-label
             type="email"
-            name="primary_email_address"
+            name="email"
             text="Email Address"
             [isRequired]="true"
             [btnClicked]="btnClicked"

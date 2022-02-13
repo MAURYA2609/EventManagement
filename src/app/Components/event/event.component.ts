@@ -8,11 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class EventComponent implements OnInit {
 
   @Input() eventObj = {
-    event_id: "",
-    event_title: "",
-    start_date: "",
-    end_date: "",
-    manager: "",
+    eid: "",
+    title: "",
+    start_time: "",
+    end_time: ""
   }
   @Input () category_title = ""
 

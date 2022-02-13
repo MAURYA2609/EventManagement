@@ -273,7 +273,7 @@
     .event-details {
       flex-wrap: wrap;
       flex-direction: row;
-      margin-top: 30px;
+      margin-top: 50px;
     }
   
     .event-navigators, ul {

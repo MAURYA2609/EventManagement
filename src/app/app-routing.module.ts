@@ -40,6 +40,9 @@ import { CallForAbstractComponent } from './Components/Users/manage/call-for-abs
 import { LogComponent } from './Components/Users/manage/log/log.component';
 import { TracksComponent } from './Components/Users/manage/tracks/tracks.component';
 import { TrackPermissionComponent } from './Components/Users/manage/track-permission/track-permission.component';
+import { SubmitNewAbstractComponent } from './Components/Users/submit-new-abstract/submit-new-abstract.component';
+import { AuthenticationGuard } from './services/authentication.guard';
+import { ProgressComponent } from './Components/progress/progress.component';
 
 const routes: Routes = [
   {
@@ -69,7 +72,7 @@ const routes: Routes = [
   {
     path: 'category/:id/create-event',
     component: CreateNewEventComponent,
-    //canActivate: [AdminAuthGuard]
+    canActivate: [AdminAuthGuard]
   },
   {
     path: 'category/:id',
@@ -96,6 +99,11 @@ const routes: Routes = [
     component: UserDetailComponent
   },
   {
+    path: 'event/:id/submit-abstract',
+    component: SubmitNewAbstractComponent,
+    canActivate: [AuthenticationGuard]
+  },
+  {
     path:':username/edit',
     component: UserEditComponent,
     children: [
@@ -116,7 +124,7 @@ const routes: Routes = [
   {
     path: 'event/:id/manage',
     component: ManageEventComponent,
-    // canActivate: [AdminAuthGuard],
+     canActivate: [AdminAuthGuard],
     children: [
       
       {
@@ -179,6 +187,6 @@ export const routingModule = [
   CategoryComponent, ResetPasswordComponent, VerifyEmailComponent, UserDetailComponent, UserEditComponent ,
   PersonalComponent, AffiliationComponent , CredentialsComponent, ShowErrorComponent , CreateNewEventComponent,
   EventDetailComponent, ManageEventComponent, EventListComponent ,InputTextRequiredComponent ,EventComponent ,
-  AbstractListComponent ,AbstractDetailComponent/*, SettingsComponent , ProtectionComponent ,MaterialsComponent ,RolesSetupComponent ,
+  AbstractListComponent ,AbstractDetailComponent , SubmitNewAbstractComponent , ProgressComponent/*, SettingsComponent , ProtectionComponent ,MaterialsComponent ,RolesSetupComponent ,
   CallForAbstractComponent ,LogComponent ,TracksComponent , TrackPermissionComponent*/
 ]

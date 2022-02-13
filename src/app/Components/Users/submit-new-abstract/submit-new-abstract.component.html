@@ -1,0 +1,111 @@
+<div class="submit-abstract-container">
+    <div>
+      <p>Submit new abstract</p>
+      <div class="label-input">
+        <table>
+          <tr class="abstract-title">
+            <td>
+              <label for="abstract-title">Title</label><span class="required-star">*</span>
+            </td>
+            <td>
+              <input type="text" name="abstract_title" id="abstract-title" placeholder="Title" #title />
+            </td>
+          </tr>
+          <tr class="abstract-content">
+            <td>
+              <label for="abstract-content">Content</label><span class="required-star">*</span>
+            </td>
+            <td>
+              <ckeditor #content></ckeditor>
+            </td>
+          </tr>
+          <tr class="abstract-contribution-type">
+            <td>
+              <label for="abstract-contribution-type">Contribution Type</label><span class="required-star">*</span>
+            </td>
+            <td>
+              <select name="abstract_contribution_type" id="abstract-contribution-type" #contributionType>
+                <option value="">- - - Select option - - -</option>
+                <option value="paper">Paper</option>
+                <option value="poster">Poster</option>
+                <option value="oral">Oral</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="abstract-authors">
+            <td>
+              <label for="abstract-authors">Authors</label><span class="required-star">*</span>
+            </td>
+            <td>
+              <div id="authors-input-container">
+                <fieldset>
+                  <legend>Authors</legend>
+                  <div id="authors-list" *ngFor="let author of authorsList">
+                    <div id="author" [ngStyle]="{ 'display': author.is_speaker ? null : 'none' }">{{ author.name }}</div>
+                  </div>
+                  <legend><hr>Co-Authors<hr></legend>
+                  <div id="co-authors-list" *ngFor="let author of authorsList">
+                    <div id="co-author" [ngStyle]="{ 'display': !author.is_speaker ? null : 'none' }">{{ author.name }}</div>
+                  </div>
+                  <div class="authors-selector">
+                    <button (click)="addMyself()">Add Myself</button>
+                    <button (click)="addUser()">Search</button>
+                  </div>
+                </fieldset>
+              </div>
+            </td>
+          </tr>
+          <tr class="abstract-comments">
+            <td>
+              <label for="abstract-comments">Comments</label>
+            </td>
+            <td>
+              <textarea type="text" name="abstract_comments" id="abstract-comments" placeholder="Comments" #comments></textarea>
+            </td>
+          </tr>
+          <tr class="abstract-attachments">
+            <td>
+              <label for="abstract-attachments">Attachments</label>
+            </td>
+            <td>
+              <div class="dropzone" fileDragDrop (onFileDropped)="dragUploadFile($event)">
+                <input type="file" id="fileDropRef" (change)="browseUploadFile($event)" />
+                <img src="assets/img/ic-upload-file.svg" width="30px" alt="">
+                <h3>Drag and drop file here</h3>
+                <h3>or</h3>
+                <label for="file_drop_ref">Browser for file</label>
+              </div>
+              <div class="files-list">
+                <div class="single-file" *ngIf="files">
+                  <img src="assets/img/ic-file.svg" width="45px" alt="file">
+                  <div class="info">
+                    <h4 class="name">{{ files?.name }}</h4>
+                    <p class="size">
+                      {{ formatBytes(files?.size) }}
+                    </p>
+                    <app-progress [progress]="files?.progress"></app-progress>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="abstract-track">
+            <td>
+              <label for="abstract-track">Track</label><span class="required-star">*</span>
+            </td>
+            <td>
+              <select name="abstract_track" id="abstract-track" #track_id>
+                <option value="">- - - Select option - - -</option>
+                <option *ngFor="let track of tracks" value="{{track._id}}">{{ track.title }}</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="submit">
+        <button (click)="submitAbstract(title.value, content.data, contributionType.value, comments.value, track_id.value)">Submit</button>
+      </div>
+    </div>
+  </div>
+  
+  

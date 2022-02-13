@@ -1,0 +1,303 @@
+button {
+    cursor: pointer;
+  }
+  
+  .submit-abstract-container {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    border: 1px solid rgb(161, 161, 161);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.16), -2px 1px 1px 1px rgba(0, 0, 0, 0.08);
+    border-radius: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 15px;
+  }
+  
+  .create-event-container div {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  p {
+    color: #929292;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1.25px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+  }
+  
+  .required-star {
+    color: red;
+    vertical-align: super;
+    padding-left: 4px;
+  }
+  
+  table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #abstract-track, #abstract-contribution-type {
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    align-self: center;
+  }
+  
+  .label-input {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .label-input td {
+    padding-top: 20px;
+  }
+  
+  .label-input td:nth-child(1) {
+    height: 35px;
+    text-align: right;
+    padding-right: 10px;
+    vertical-align: top;
+  }
+  
+  .label-input td:nth-child(2) {
+    padding-left: 10px;
+  }
+  
+  .label-input label {
+    color: #888888;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+  
+  .label-input input, .label-input textarea {
+    width: 450px;
+    height: 35px;
+    padding: 10px;
+    font-size: 15.5px;
+    color: #181818;
+    letter-spacing: 1.25px;
+    border: 0.5px solid rgb(190, 190, 190);
+  }
+  
+  .label-input textarea {
+    resize: vertical;
+    height: 45px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15.5px;
+    color: #181818;
+    letter-spacing: 1.25px;
+  }
+  
+  .label-input input::placeholder, .label-input textarea::placeholder {
+    color: rgba(0, 0, 0, 0.514);
+  }
+  
+  .label-input input:focus, .label-input textarea:focus {
+    background-color: rgba(81, 155, 184, 0.219);
+  }
+  
+  #authors-input-container {
+    width: 450px;
+    height: 180px;
+  }
+  
+  #authors-input-container fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    border: 0.5px solid rgb(190, 190, 190);
+  }
+  
+  #authors-input-container legend {
+    display: flex;
+    color: #a1a1a1d7;
+    text-align: center;
+    padding: 0 10px;
+    font-size: 13px;
+    font-weight: 200;
+    align-items: center;
+  }
+  
+  #authors-input-container div {
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+  }
+  
+  #authors-input-container hr {
+    display: flex;
+    height: 0.5px;
+    width: 160px;
+    border: none;
+    background-color: rgb(190, 190, 190);
+    margin: 0px auto;
+    align-items: center;
+  }
+  
+  #authors-list {
+    height: 40px;
+  }
+  
+  #author {
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.76);
+    color: white;
+    font-size: 15px;
+    font-weight: 100;
+    border-radius: 3px;
+  }
+  
+  #co-authors-list {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100px;
+    vertical-align: top;
+    align-self: flex-start;
+  }
+  
+  #co-author {
+    height: 25px;
+    background-color: rgba(0, 110, 255, 0.849);
+    color: white;
+    font-size: 15px;
+    font-weight: 100;
+    border-radius: 3px;
+  }
+  
+  .authors-selector {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(199, 199, 199, 0.288);
+    justify-content: flex-end;
+    border-top: 1px solid rgb(190, 190, 190);
+  }
+  
+  .authors-selector button {
+    margin: 0px 4px;
+    padding: 7px 10px;
+    border: none;
+  }
+  
+  .authors-selector button:nth-child(1) {
+    color: #646464;
+    background-color: rgba(184, 184, 184, 0.753);
+  }
+  
+  .authors-selector button:nth-child(2), button:nth-child(3) {
+    color: #fff;
+    background-color: rgb(34, 105, 238);
+  }
+  
+  .dropzone {
+    width: 450px;
+    height: 210px;
+    padding: 2rem;
+    text-align: center;
+    border: dashed 1px #979797;
+    position: relative;
+  }
+  
+  .dropzone input {
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+  
+  .dropzone label {
+    color: white;
+    width: 183px;
+    height: 44px;
+    border-radius: 21.5px;
+    background-color: #db202f;
+    padding: 8px 16px;
+  }
+  
+  .dropzone h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #38424c;
+  }
+  
+  .files-list {
+    margin-top: 1.5rem;
+  }
+  
+  .single-file {
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    border: dashed 1px #979797;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+  }
+  
+  img.delete {
+    margin-left: 0.5rem;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+  
+  .name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #353f4a;
+    margin: 0;
+  }
+  
+  .size {
+    font-size: 12px;
+    font-weight: 500;
+    color: #a4a4a4;
+    margin-left: 0px;
+    margin-bottom: 0.25rem;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 10px;
+    justify-content: center;
+  }
+  
+  .submit button {
+    width: 200px;
+    height: 40px;
+    background-color: rgb(34, 105, 238);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #fff;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+  }
+  
+  @media screen and (max-width: 810px) {
+    .submit-abstract-container {
+      width: 600px;
+      border:none;
+      box-shadow: none;
+    }
+    table {
+      margin: 0;
+    }
+  }
+  

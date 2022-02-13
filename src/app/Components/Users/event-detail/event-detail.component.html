@@ -6,10 +6,10 @@
         </div>
         <div id="event-date">
           <div id="event-duration">
-            {{ event_duration }}
+            {{ start_dt | date :'dd' }}-{{ end_dt | date : 'dd MMMM yyyy'}}
           </div>
           <div id="event-timezone">
-            {{ event_timezone }}
+            {{ event_timezone }} timezone
           </div>
         </div>
       </div>
@@ -35,8 +35,8 @@
         </div>
         <div class="contacts">
           <div id="contacts-title">Contact</div>
-          <div id="contacts-detail" *ngFor="let contact of manager_contact_numbers">
-            {{ contact }}
+          <div id="contacts-detail" >
+            +91 9999911111
           </div>
         </div>
       </div>
@@ -50,9 +50,9 @@
               <i class="fa fa-clock-o"></i>
             </div>
             <div>
-              <b>Starts</b> {{ start_dt }}
+              <b style="margin-right: 10px;">Starts </b> {{ start_dt | date }}
               <br>
-              <b>Ends</b> {{ end_dt }}
+              <b style="margin-right: 10px;">Ends </b> {{ end_dt | date}}
               <p>{{ event_timezone }}</p>
             </div>
           </div>

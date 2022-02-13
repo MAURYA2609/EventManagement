@@ -19,10 +19,11 @@ export class EventListComponent implements OnInit {
 
   constructor(private router: Router, private eventService: EventService) {
     this.url = this.router.url + "/create-event"
-    this.events =[ {event_id:"1", event_title:"trying title", start_date:"1/1/2001",end_date:"2/2/2002",manager:"maurya"},
-    {event_id:"2", event_title:"trying title 2", start_date:"3/3/2003",end_date:"4/4/2004",manager:"jay"}];
+    // this.events =[ {event_id:"1", event_title:"trying title", start_date:"1/1/2001",end_date:"2/2/2002",manager:"maurya"},
+    // {event_id:"2", event_title:"trying title 2", start_date:"3/3/2003",end_date:"4/4/2004",manager:"jay"}];
     this.eventService.fetchAllEvent().subscribe(
       data => {
+        console.log(data)
         this.events = data
       },
       error => {

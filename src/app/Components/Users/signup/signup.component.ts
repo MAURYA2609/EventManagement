@@ -25,8 +25,8 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  first_name = {text: "", isNotEmpty: false}
-  last_name = {text: "", isNotEmpty: false}
+  fname = {text: "", isNotEmpty: false}
+  lname = {text: "", isNotEmpty: false}
   dob = {text: "", isNotEmpty: false}
   address_line1 = {text: "", isNotEmpty: false}
   address_line2 = {text: "", isNotEmpty: false}
@@ -35,7 +35,7 @@ export class SignupComponent implements OnInit {
   country = {text: "", isNotEmpty: false}
   primary_phone_number = {text: "", isNotEmpty: false}
   alternate_phone_number = {text: "", isNotEmpty: false}
-  primary_email_address = {text: "", isNotEmpty: false}
+  email = {text: "", isNotEmpty: false}
   alternate_email_address = {text: "", isNotEmpty: false}
   affiliation_name = {text: "", isNotEmpty: false}
   affiliation_email_address = {text: "", isNotEmpty: false}
@@ -44,8 +44,8 @@ export class SignupComponent implements OnInit {
   confirm_password = {text: "", isNotEmpty: false}
 
   userInfo: RegisterUser = {
-    first_name: "",
-    last_name: "",
+    fname: "",
+    lname: "",
     dob: "",
     address_line1: "",
     address_line2: "",
@@ -54,7 +54,7 @@ export class SignupComponent implements OnInit {
     country: "",
     primary_phone_number: "",
     alternate_phone_number: "",
-    primary_email_address: "",
+    email: "",
     alternate_email_address: "",
     affiliation_name: "",
     affiliation_email_address: "",
@@ -83,20 +83,20 @@ export class SignupComponent implements OnInit {
   }
 
   inputData(e: any) {
-    if (e.name === 'first_name') {
+    if (e.name === 'fname') {
       if (!e.data) {
-        this.first_name.isNotEmpty = false
+        this.fname.isNotEmpty = false
       } else {
-        this.first_name.text = e.data
-        this.first_name.isNotEmpty = true
+        this.fname.text = e.data
+        this.fname.isNotEmpty = true
       }
     }
-    if (e.name === 'last_name') {
+    if (e.name === 'lname') {
       if (!e.data) {
-        this.last_name.isNotEmpty = false
+        this.lname.isNotEmpty = false
       } else {
-        this.last_name.text = e.data
-        this.last_name.isNotEmpty = true
+        this.lname.text = e.data
+        this.lname.isNotEmpty = true
       }
     }
     if (e.name === "dob") {
@@ -142,12 +142,12 @@ export class SignupComponent implements OnInit {
         this.country.isNotEmpty = true
       }
     }
-    if (e.name === 'primary_email_address') {
+    if (e.name === 'email') {
       if (!e.data) {
-        this.primary_email_address.isNotEmpty = false
+        this.email.isNotEmpty = false
       } else {
-        this.primary_email_address.text = e.data
-        this.primary_email_address.isNotEmpty = true
+        this.email.text = e.data
+        this.email.isNotEmpty = true
       }
     }
     if (e.name === 'alternate_email_address') {
@@ -218,15 +218,15 @@ export class SignupComponent implements OnInit {
 
   registerUser() {
     if (
-      this.first_name.isNotEmpty &&
-      this.last_name.isNotEmpty &&
+      this.fname.isNotEmpty &&
+      this.lname.isNotEmpty &&
       this.dob.isNotEmpty &&
       this.address_line1.isNotEmpty &&
       this.city.isNotEmpty &&
       this.state.isNotEmpty &&
       this.country.isNotEmpty &&
       this.primary_phone_number.isNotEmpty &&
-      this.primary_email_address.isNotEmpty &&
+      this.email.isNotEmpty &&
       this.affiliation_name.isNotEmpty &&
       this.affiliation_email_address.isNotEmpty &&
       this.username.isNotEmpty &&
@@ -235,15 +235,15 @@ export class SignupComponent implements OnInit {
         if (this.password.text !=this.confirm_password.text) {
           this.password_mismatch = true
         } else {
-          this.userInfo.first_name = this.first_name.text
-          this.userInfo.last_name = this.last_name.text
+          this.userInfo.fname = this.fname.text
+          this.userInfo.lname = this.lname.text
           this.userInfo.dob = this.dob.text
           this.userInfo.address_line1 = this.address_line1.text
           this.userInfo.address_line2 = this.address_line2.text
           this.userInfo.city = this.city.text
           this.userInfo.state = this.state.text
           this.userInfo.country = this.country.text
-          this.userInfo.primary_email_address = this.primary_email_address.text
+          this.userInfo.email = this.email.text
           this.userInfo.alternate_email_address = this.alternate_email_address.text
           this.userInfo.primary_phone_number = this.primary_phone_number.text
           this.userInfo.alternate_phone_number = this.alternate_phone_number.text

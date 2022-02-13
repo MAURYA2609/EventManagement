@@ -8,8 +8,8 @@ export class EventService {
 
   constructor(private webReqService: WebRequestService) { }
 
-  createEvent(eventDetailObj: Object) {
-    return this.webReqService.post('events/create', eventDetailObj)
+  createEvent(eventDetailObj: Object,url:string) {
+    return this.webReqService.post(url+'/events/create', eventDetailObj)
   }
 
   fetchAllEvent() {

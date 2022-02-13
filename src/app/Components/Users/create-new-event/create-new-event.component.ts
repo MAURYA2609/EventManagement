@@ -195,7 +195,7 @@ export class CreateNewEventComponent implements OnInit {
           keyword: this.keywords,
           protect_mode: this.protect_mode
         }
-        this.eventService.createEvent(newEventObj).subscribe(
+        this.eventService.createEvent(newEventObj,'category/1').subscribe(
           data => {
             this.location.back()
           },

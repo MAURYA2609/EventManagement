@@ -9,23 +9,22 @@ export class AuthenticationService {
   constructor(private webReqService: WebRequestService) { }
 
   loginUser(credentials: Object) {
-    return this.webReqService.post('login', credentials)
+    return this.webReqService.post('user/login', credentials)
   }
 
   createUser(userInfo: Object) {
-    return this.webReqService.post('signup', userInfo)
+    return this.webReqService.post('user/signup', userInfo)
   }
 
   forgotPassword(userEmail: Object) {
-    return this.webReqService.post('forgot-password', userEmail)
+    return this.webReqService.post('user/forgot-password', userEmail)
   }
 
   verifyEmail(userToken: Object) {
-    return this.webReqService.post('verify-email', userToken)
+    return this.webReqService.post('user/verify-email', userToken)
   }
 
   resetPassword(passwordObj: Object) {
-    return this.webReqService.post('reset-password', passwordObj)
+    return this.webReqService.post('user/reset-password', passwordObj)
   }
-  
 }

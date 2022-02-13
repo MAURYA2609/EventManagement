@@ -15,7 +15,6 @@ export class HeaderComponent implements OnInit {
   isOpened = false
 
   user_name = ""
-  user_username = ""
   login = false
 
   public screenWidth: any
@@ -49,8 +48,7 @@ export class HeaderComponent implements OnInit {
     const data = this.cookie.get("jwt")
     if (data) {
       const user = JSON.parse(atob(data.split('.')[1]))
-      this.user_name = `${user.first_name} ${user.last_name}`
-      this.user_username = user.username
+      this.user_name = `${user.username}`
       this.login = !this.login
     } else {
       this.login = false
@@ -65,11 +63,16 @@ export class HeaderComponent implements OnInit {
     } else this.isOpened = !this.isOpened
   }
 
+  checkAdmin()
+  {
+
+  }
+
   logout() {
     this.cookie.delete("jwt")
     this.login = !this.login
     this.user_name = ""
-    this.user_username = ""
+    this.router.navigate(['/'])
   }
 
   redirectToMainPage() {
