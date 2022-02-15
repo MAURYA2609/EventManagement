@@ -72,12 +72,8 @@ export class LoginComponent implements OnInit {
           if (res.hasOwnProperty('token')) {
             const data = this.getDataFromObj(res)
             this.cookie.set("jwt", data)
-            const pathUrl = this.route.snapshot.queryParams['returnUrl']
-            if (!pathUrl) {
-              this.location.back()
-            } else {
-              this.router.navigate([pathUrl])
-            }
+            this.router.navigate(['/'])
+            
           } else if (res.hasOwnProperty('text')) {
             const data = this.getDataFromObj(res)
             this.router.navigate(['/login/verification-required', { text: data }], { skipLocationChange: true })

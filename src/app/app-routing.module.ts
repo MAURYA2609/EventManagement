@@ -83,7 +83,7 @@ const routes: Routes = [
     component: EventDetailComponent
   },
   {
-    path: 'reset-password',
+    path: 'reset/:token',
     component: ResetPasswordComponent
   },
   {

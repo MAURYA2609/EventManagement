@@ -42,7 +42,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   forgotPassword() {
     if (this.email_address.isNotEmpty) {
-      this.authService.forgotPassword({ email_address: this.email_address.text }).subscribe(
+      this.authService.forgotPassword({ email: this.email_address.text }).subscribe(
         data => {
           this.router.navigate(
             ['/forgot-password/success', {text: 'Please check your email to reset your password.'}],

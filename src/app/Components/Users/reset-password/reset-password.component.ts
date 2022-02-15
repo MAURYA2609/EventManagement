@@ -14,13 +14,17 @@ export class ResetPasswordComponent implements OnInit {
   isInvalid = false
   btnClicked = false
   password_mismatch = false
-
   password = { text: '', isNotEmpty: false }
   confirm_password = { text: '', isNotEmpty: false }
 
-  constructor(private router: Router, private route: ActivatedRoute, private authService: AuthenticationService, private cookie: CookieService) { }
+  token : any
 
-  ngOnInit(): void {
+  constructor(private router: Router, private route: ActivatedRoute, private authService: AuthenticationService, private cookie: CookieService) { 
+    this.token = this.router.url.split('/')[2]
+    console.log(this.token)
+  }
+
+  ngOnInit() {
   }
 
   inputData(e: any) {
@@ -55,9 +59,8 @@ export class ResetPasswordComponent implements OnInit {
       if (this.password.text !== this.confirm_password.text) {
         this.password_mismatch = true
       } else {
-        const token = this.route.snapshot.queryParams['token']
         this.authService.resetPassword({
-          token: token,
+          token: this.token,
           password: this.password.text
         }).subscribe(
           data => {
