@@ -70,7 +70,21 @@ export class AffiliationComponent implements OnInit {
   }
 
   editAffiliationDetail() {
-
+    this.changedUserDetail ={
+      affiliation_name : this.affiliation_name.text,
+      affiliation_email_address : this.affiliation_email.text
+    }
+    console.log(this.changedUserDetail)
+    console.log(this.username)
+    this.userService.editAffiliationDetail( this.changedUserDetail,this.username).subscribe(
+      data => {
+        console.log(data)
+        this.router.navigate(['/']);
+      },
+      error => {
+        console.log(error)
+      }
+    )
   }
 
 }

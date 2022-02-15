@@ -26,6 +26,25 @@
               </div>
           </td>
         </tr>
+        <tr class="event-type">
+          <td>
+            <label for="event-type">Event Type</label>
+            <span>*</span>
+          </td>
+          <td>
+            <input
+              type="text"
+              name="event_type"
+              id="event-type"
+              placeholder="Event Type"
+              [(ngModel)]="event_type"
+              (change)="addEventType(event_type)" />
+              <div
+                [ngStyle]="{ 'display': showError.event_title ? null : 'none' }">
+                <app-input-text-required name="Event Type"></app-input-text-required>
+              </div>
+          </td>
+        </tr>
         <tr class="event-description">
           <td>
             <label for="event-description">Description</label>
@@ -116,7 +135,7 @@
               list="venue-list"
               name="event_venue"
               id="event-venue"
-              placeholder="Venue"
+              placeholder="Venue ID"
               [(ngModel)]="venue"
               (change)="addEventVenue(venue)" />
             <datalist id="venue-list"></datalist>
@@ -124,7 +143,15 @@
                 [ngStyle]="{ 'display': showError.venue ? null : 'none' }">
                 <app-input-text-required name="Venue"></app-input-text-required>
               </div>
-            <input
+              <input
+              list="room-list"
+              name="event_room_id"
+              id="event-room-id"
+              placeholder="Room_ID"
+              [(ngModel)]="room_id"
+              (change)="addEventRoomID(room_id)"/>
+            <datalist id="room-list"></datalist>
+              <input
               list="room-list"
               name="event_room"
               id="event-room"

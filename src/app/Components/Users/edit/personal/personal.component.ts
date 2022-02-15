@@ -138,8 +138,8 @@ export class PersonalComponent implements OnInit {
         this.city.isNotEmpty &&
         this.state.isNotEmpty &&
         this.country.isNotEmpty) {
-          this.changedUserDetail.first_name = this.first_name.text
-          this.changedUserDetail.last_name = this.last_name.text
+          this.changedUserDetail.fname = this.first_name.text
+          this.changedUserDetail.lname = this.last_name.text
           this.changedUserDetail.dob = this.dob.text
           this.changedUserDetail.address_line1 = this.address_line1.text
           this.changedUserDetail.city = this.city.text
@@ -150,6 +150,7 @@ export class PersonalComponent implements OnInit {
           this.userService.editPersonalDetail(this.changedUserDetail, this.username).subscribe(
             data => {
               console.log(data)
+              this.router.navigate(['/']);
             },
             error => {
               console.log(error)

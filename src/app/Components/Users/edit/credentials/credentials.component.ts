@@ -32,7 +32,7 @@ export class CredentialsComponent implements OnInit {
     this.username_params = this.router.url.split('/')[1]
     this.token = this.cookie.get('jwt')
     this.username_params = this.router.url.split('/')[1]
-    userService.getCredentialDetail(this.username_params, { token: this.token }).subscribe(
+    /*userService.getCredentialDetail(this.username_params, { token: this.token }).subscribe(
       data => {
         this.currentUserDetail = data
       },
@@ -40,6 +40,7 @@ export class CredentialsComponent implements OnInit {
         console.log(error)
       }
     )
+    console.log(this.currentUserDetail)*/
   }
 
   ngOnInit(): void {
@@ -77,7 +78,18 @@ export class CredentialsComponent implements OnInit {
   }
 
   editCredentialDetail() {
-
+  this.changedUserDetail ={
+    username : this.username.text,
+    password : this.password.text
   }
-
+  this.userService.editCredentialDetail( this.changedUserDetail,this.username.text).subscribe(
+    data => {
+      console.log(data)
+      this.router.navigate(['/']);
+    },
+    error => {
+      console.log(error)
+    }
+  )
+  }
 }

@@ -12,22 +12,23 @@ export class UserService {
     return this.webReqService.get(`${username}`)
   }
   getPersonalDetail(username: String, token: Object) {
-    return this.webReqService.post(`${username}/edit/personal`, token)
+    return this.webReqService.post('user/'+`${username}/edit/personal`, token)
   }
   editPersonalDetail(personalObj: Object, username: String) {
-    return this.webReqService.put(`${username}/edit/personal`, personalObj)
+    return this.webReqService.put('user/'+`${username}/edit/personal`, personalObj)
   }
   getAffiliationDetail(username: String, token: Object) {
-    return this.webReqService.post(`${username}/edit/affiliation`, token)
+    return this.webReqService.post('user/'+`${username}/edit/affiliation`, token)
   }
   editAffiliationDetail(affiliationObj: Object, username: String) {
-    return this.webReqService.put(`${username}/edit/affiliation`, affiliationObj)
+    return this.webReqService.put('user/'+`${username}/edit/affiliation`, affiliationObj)
   }
   getCredentialDetail(username: String, token: Object) {
-    return this.webReqService.post(`${username}/edit/credential`, token)
+    return this.webReqService.post('user/'+`${username}/edit/credential`, token)
   }
   editCredentialDetail(credentialObj: Object, username: String) {
-    return this.webReqService.put(`${username}/edit/credential`, credentialObj)
+    console.log('called here')
+    return this.webReqService.put('user/'+`${username}/edit/credential`, credentialObj)
   }
   blockUser(username: String) {
     return this.webReqService.get(`${username}/edit/block`)

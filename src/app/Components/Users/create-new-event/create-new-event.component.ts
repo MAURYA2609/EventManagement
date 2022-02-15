@@ -22,12 +22,14 @@ export class CreateNewEventComponent implements OnInit {
 
   token = ""
   event_title = ""
+  event_type =""
   event_description = ""
   event_label = ""
   start_date = ""
   end_date = ""
   timezone = ""
   venue = ""
+  room_id = ""
   room = ""
   address = ""
   map_url = ""
@@ -40,10 +42,13 @@ export class CreateNewEventComponent implements OnInit {
 
   showError = {
     event_title: false,
+    event_type:false,
     event_description: false,
     start_date: false,
     end_date: false,
     timezone: false,
+    room_id:false,
+    room_name:false,
     venue: false,
     address: false,
     additional_info: false,
@@ -158,6 +163,19 @@ export class CreateNewEventComponent implements OnInit {
     }
   }
 
+  addEventType(e: any) {
+    if (e !== null) {
+      this.showError.event_type = false
+      this.event_type = e
+    } else {
+      this.showError.event_type = true
+    }
+  }
+
+  addEventRoomID(e: any) {
+    this.room_id = e
+  }
+
   addEventKeywords(e: string) {
       if (e.length !== 0) {
         this.keywords.push(e)
@@ -172,29 +190,34 @@ export class CreateNewEventComponent implements OnInit {
     else if (this.inheriting) this.protect_mode = "inheriting"
     else if (this.protected) this.protect_mode = "protected"
     if (!this.showError.event_title &&
+      !this.showError.event_type &&
       !this.showError.event_description &&
       !this.showError.start_date &&
       !this.showError.end_date &&
       !this.showError.timezone &&
+      !this.showError.room_id &&
+      !this.showError.room_name &&
       !this.showError.venue &&
       !this.showError.address &&
       !this.showError.additional_info) {
         this.token = this.cookie.get("jwt")
         const newEventObj = {
-          token: this.token,
-          event_title: this.event_title,
-          event_description: this.event_description,
-          event_label: this.event_label,
-          start_dt: this.start_date,
-          end_dt: this.end_date,
+          title: this.event_title,
+          e_type:this.event_type,
+          description: this.event_description,
+          start_time: this.start_date,
+          end_time: this.end_date,
           timezone: this.timezone,
-          venue: this.venue,
-          room: this.room,
           address: this.address,
+          room_id: this.room_id,
+          room_name:this.room,
+          veneue_id: this.venue,
           map_url: this.map_url,
           keyword: this.keywords,
-          protect_mode: this.protect_mode
+          protect_mode: this.protect_mode,
+          token: this.token
         }
+        console.log(newEventObj)
         this.eventService.createEvent(newEventObj,'category/1').subscribe(
           data => {
             this.location.back()
@@ -230,6 +253,16 @@ export class CreateNewEventComponent implements OnInit {
     if (this.address === "") {
       this.showError.address = true
     }
+    if (this.room_id === "") {
+      this.showError.room_id= true
+    }
+    if (this.event_type === "") {
+      this.showError.event_type = true
+    }
+    if (this.room === "") {
+      this.showError.room_name = true
+    }
+
   }
 
 }
