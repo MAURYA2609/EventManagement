@@ -71,10 +71,11 @@ export class LoginComponent implements OnInit {
         res => {
           if (res.hasOwnProperty('token')) {
             const data = this.getDataFromObj(res)
+            console.log(data)
             this.cookie.set("jwt", data)
             this.router.navigate(['/'])
             
-          } else if (res.hasOwnProperty('text')) {
+          } else {
             const data = this.getDataFromObj(res)
             this.router.navigate(['/login/verification-required', { text: data }], { skipLocationChange: true })
           }

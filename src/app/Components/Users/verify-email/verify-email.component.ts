@@ -13,7 +13,8 @@ export class VerifyEmailComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private authService: AuthenticationService, private cookie: CookieService) { }
 
   ngOnInit(): void {
-    this.authService.verifyEmail({ token: this.route.snapshot.queryParams['token'] }).subscribe(
+    console.log(this.router.url.split('/')[2])
+    this.authService.verifyEmail({ token:this.router.url.split('/')[2] }).subscribe(
       res => {
         const data = this.getDataFromObj(res)
         this.cookie.set("jwt", data)

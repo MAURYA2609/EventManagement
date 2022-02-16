@@ -48,6 +48,7 @@ export class HeaderComponent implements OnInit {
     const data = this.cookie.get("jwt")
     if (data) {
       const user = JSON.parse(atob(data.split('.')[1]))
+      console.log(user)
       this.user_name = `${user.username}`
       this.login = !this.login
     } else {

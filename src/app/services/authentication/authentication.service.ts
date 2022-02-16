@@ -22,7 +22,7 @@ export class AuthenticationService {
   }
 
   verifyEmail(userToken: Object) {
-    return this.webReqService.post('user/verify-email', userToken)
+    return this.webReqService.post('verify-email', userToken)
   }
 
   resetPassword(passwordObj: Object) {

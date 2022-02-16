@@ -58,6 +58,10 @@ const routes: Routes = [
     component: SignupComponent
   },
   {
+    path: 'signup/success',
+    component: ShowTextComponent
+  },
+  {
     path: 'login/verification-required',
     component: ShowTextComponent
   },
@@ -87,7 +91,7 @@ const routes: Routes = [
     component: ResetPasswordComponent
   },
   {
-    path: 'verify-email',
+    path: 'verify/:token',
     component: VerifyEmailComponent
   },
   {
