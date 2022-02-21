@@ -1,1 +1,26 @@
-<p>search-user works!</p>
+<div class="close-icon" (click)="onClose()">
+  <i class="fa fa-times"></i>
+</div>
+<div class="input-container">
+  <label for="email">Email</label>
+  <input
+    type="text"
+    name="author"
+    placeholder="Email"
+    id="author"
+    (keyup)="sendData($event)" />
+  <section class="search-result">
+    <p *ngIf="searchList.length < 1 && hasQuery">Sorry. Nothing Found</p>
+    <ng-template ngFor let-user [ngForOf]="searchList" let-i="index" *ngIf="hasQuery">
+      <div id="user-block" (click)="addUser(user)">
+        <div>{{ user.name }}</div>
+        <div>{{ user.email }}</div>
+      </div>
+    </ng-template>
+  </section>
+  <div style="font-weight: 500; font-size: 15px; margin: 20px 0px;" *ngIf="user">{{ user.name }}</div>
+  <div class="btn-container">
+    <button (click)="onSubmit()">Submit</button>
+    <button (click)="onClose()">Close</button>
+  </div>
+</div>

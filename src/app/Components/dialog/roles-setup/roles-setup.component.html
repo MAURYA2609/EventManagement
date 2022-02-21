@@ -1,1 +1,39 @@
-<p>roles-setup works!</p>
+<div class="close-icon">
+  <i class="fa fa-times" (click)="onClose()"></i>
+</div>
+<div class="input-container">
+  <table>
+    <tr id="role_name">
+      <td><label for="role_name">Role Name</label></td>
+      <td><input #role_name type="text" name="role_name" placeholder="Role Name" value="{{ name }}" /></td>
+    </tr>
+    <div [ngStyle]="{ 'display': !showError.name ? 'none' : null, 'color': 'red', 'width': '200%' }" >Role Name is required.</div>
+    <tr id="role_code">
+      <td><label for="role_code">Role Code</label></td>
+      <td><input #role_code type="text" name="role_code" value="{{ code }}" /></td>
+    </tr>
+    <div [ngStyle]="{ 'display': !showError.code ? 'none' : null, 'color': 'red', 'width': '200%' }" >Role Code is required.</div>
+    <div [ngStyle]="{ 'display': !showError.length ? 'none' : null, 'color': 'red', 'width': '200%' }" >Role Code is must be less than 5 digit.</div>
+    <tr id="role_color">
+      <td><label for="role_color">Event Color</label></td>
+      <td>
+        <select [(ngModel)]="role_color" name="role_color" id="role_color">
+          <option value="{{ null }}"></option>
+          <option
+            *ngFor="let color of colors" value="{{ color }}"
+            [ngStyle]="{ 'background-color': color }">
+          </option>
+        </select>
+      </td>
+      <td>
+        <div [ngStyle]="{ 'background-color': role_color, 'width': '60px', 'height': '30px' }">
+        </div>
+      </td>
+    </tr>
+    <div [ngStyle]="{ 'display': !showError.color ? 'none' : null, 'color': 'red', 'width': '200%' }" >Role Color is required.</div>
+  </table>
+  <div class="btn-container">
+    <button (click)="onSubmit(role_name, role_code, role_color)">Submit</button>
+    <button (click)="onClose()">Close</button>
+  </div>
+</div>

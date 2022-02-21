@@ -1,1 +1,29 @@
-<p>track-input works!</p>
+<div class="close-icon">
+  <i class="fa fa-times" (click)="onClose()"></i>
+</div>
+<div class="input-container">
+  <table>
+    <tr>
+      <th>Name</th>
+      <td>
+        <input #track_name type="text" name="track_name" id="track-name" [value]="data.title" />
+      </td>
+    </tr>
+    <tr>
+      <th>Code</th>
+      <td>
+        <input #track_code type="text" name="track_code" id="track-code" maxlength="4" [value]="data.code" />
+      </td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td>
+        <textarea name="track_description" id="track-description" [(ngModel)]="track_description"></textarea>
+      </td>
+    </tr>
+  </table>
+  <div class="btn-container">
+    <button (click)="onSubmit(track_name.value, track_code.value, track_description)">Submit</button>
+    <button (click)="onClose()">Close</button>
+  </div>
+</div>

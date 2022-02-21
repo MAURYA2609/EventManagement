@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-//import { TrackInputComponent } from 'src/app/components/dialog/track-input/track-input.component';
-//import { ViewTrackComponent } from 'src/app/components/dialog/view-track/view-track.component';
+import { TrackInputComponent } from 'src/app/Components/dialog/track-input/track-input.component';
+import { ViewTrackComponent } from 'src/app/Components/dialog/view-track/view-track.component';
 import { NotificationService } from 'src/app/services/notification/notification.service';
 import { TrackService } from 'src/app/services/track/track.service';
 
@@ -51,7 +51,7 @@ export class TracksComponent implements OnInit {
 
   ngOnInit(): void {
   }
-/*
+
   onViewClicked(track: any) {
     const dialogConfig = new MatDialogConfig()
     dialogConfig.disableClose = true
@@ -65,7 +65,7 @@ export class TracksComponent implements OnInit {
     dialogConfig.width = '30%'
     this.dialog.open(ViewTrackComponent, dialogConfig)
   }
-*/
+
   onEditClicked(track: any) {
     const dialogConfig = new MatDialogConfig()
     dialogConfig.disableClose = true
@@ -77,7 +77,7 @@ export class TracksComponent implements OnInit {
       code: track.code
     }
     dialogConfig.width = '30%'
-    /*const dialogRef = this.dialog.open(TrackInputComponent, dialogConfig)
+    const dialogRef = this.dialog.open(TrackInputComponent, dialogConfig)
     dialogRef.afterClosed().subscribe(
       res => {
         if (res.title, res.code, res.description) {
@@ -97,7 +97,7 @@ export class TracksComponent implements OnInit {
           )
         }
       }
-    )*/
+    )
   }
 
   onDeleteClicked(id: any) {
@@ -125,7 +125,7 @@ export class TracksComponent implements OnInit {
       description: "",
       code: "",
     }
-   /* const dialogRef = this.dialog.open(TrackInputComponent, dialogConfig)
+    const dialogRef = this.dialog.open(TrackInputComponent, dialogConfig)
     dialogRef.afterClosed().subscribe(
       res => {
         if (res.title, res.code, res.description) {
@@ -145,7 +145,7 @@ export class TracksComponent implements OnInit {
           )
         }
       }
-    )*/
+    )
   }
 
   fetchData(data: any) {

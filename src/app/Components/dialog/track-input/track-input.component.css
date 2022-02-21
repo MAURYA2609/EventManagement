@@ -1,0 +1,30 @@
+@import "../dialog.module.css";
+
+th {
+  text-align: right;
+}
+
+th, td {
+  padding: 10px 15px;
+}
+
+#track-name, #track-code, #track-description {
+  padding: 6px;
+}
+
+#track-name {
+  width: 200px;
+  height: 30px;
+}
+
+#track-code {
+  width: 60px;
+  height: 30px;
+  letter-spacing: 1px;
+}
+
+#track-description {
+  height: 50px;
+  width: 250px;
+  resize: vertical;
+}

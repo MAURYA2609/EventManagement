@@ -1,0 +1,46 @@
+@import "../dialog.module.css";
+
+td {
+  padding-bottom: 20px;
+}
+
+#role_name input {
+  height: 30px;
+  padding: 0 10px
+}
+
+#role_code input {
+  height: 30px;
+  padding: 0 10px;
+  width: 80px;
+}
+
+select {
+  width: 50px;
+  height: 25px;
+}
+
+option {
+  padding: 15px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  border: none;
+  border-radius: 3px;
+  padding: 5px 20px;
+  color: white;
+}
+
+button:nth-child(1) {
+  background-color: rgb(47, 131, 47);
+  margin-right: 10px;
+}
+
+button:nth-child(2) {
+  background-color: red;
+}

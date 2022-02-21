@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-//import { CallForAbstractInputComponent } from 'src/app/components/dialog/call-for-abstract-input/call-for-abstract-input.component';
+import { CallForAbstractInputComponent } from 'src/app/Components/dialog/call-for-abstract-input/call-for-abstract-input.component';
 import { AbstractService } from 'src/app/services/abstract/abstract.service';
 import { NotificationService } from 'src/app/services/notification/notification.service';
 
@@ -64,7 +64,7 @@ export class CallForAbstractComponent implements OnInit {
     }
     dialogConfig.width = '30%'
 
-    /*const dialogRef = this.dialog.open(CallForAbstractInputComponent, dialogConfig)
+    const dialogRef = this.dialog.open(CallForAbstractInputComponent, dialogConfig)
 
     dialogRef.afterClosed().subscribe(
       res => {
@@ -83,7 +83,7 @@ export class CallForAbstractComponent implements OnInit {
           )
         }
       }
-    )*/
+    )
   }
 
   openBtn() {
@@ -98,7 +98,7 @@ export class CallForAbstractComponent implements OnInit {
     }
     dialogConfig.width = '30%'
 
-    /*const dialogRef = this.dialog.open(CallForAbstractInputComponent, dialogConfig)
+    const dialogRef = this.dialog.open(CallForAbstractInputComponent, dialogConfig)
 
     dialogRef.afterClosed().subscribe(
       res => {
@@ -117,7 +117,7 @@ export class CallForAbstractComponent implements OnInit {
           )
         }
       }
-    )*/
+    )
   }
 
   reopenBtn() {

@@ -1,0 +1,9 @@
+@import "../dialog.module.css";
+
+th {
+  text-align: right;
+}
+
+th, td {
+  padding: 15px 20px;
+}

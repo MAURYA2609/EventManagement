@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -15,11 +16,13 @@ export class HeaderComponent implements OnInit {
   isOpened = false
 
   user_name = ""
-  login = false
+  login : any
+  login_val = new BehaviorSubject<boolean>(false)
 
   public screenWidth: any
 
   constructor(private router: Router, private cookie: CookieService) {
+    
     router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
         this.url = e.url.split('/').pop()
@@ -44,15 +47,19 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.login = this.login_val.asObservable()
+    this.login_val.next(false)
     this.screenWidth = window.innerWidth
     const data = this.cookie.get("jwt")
     if (data) {
       const user = JSON.parse(atob(data.split('.')[1]))
       console.log(user)
       this.user_name = `${user.username}`
-      this.login = !this.login
+      //this.login = !this.login
+      this.login_val.next(true)
     } else {
-      this.login = false
+      //this.login = false
+      this.login_val.next(false)
     }
   }
 
@@ -71,7 +78,8 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.cookie.delete("jwt")
-    this.login = !this.login
+    //this.login = !this.login
+    this.login_val.next(false)
     this.user_name = ""
     this.router.navigate(['/'])
   }

@@ -1,1 +1,19 @@
-<p>author-type-selector works!</p>
+<div class="close-icon">
+  <i class="fa fa-times"></i>
+</div>
+<div class="input-container">
+  <table>
+    <tr>
+      <td>Author</td>
+      <td><mat-slide-toggle [(ngModel)]="author" (change)="addAuthor(author, true)"></mat-slide-toggle></td>
+    </tr>
+    <tr>
+      <td>Co-Author</td>
+      <td><mat-slide-toggle [(ngModel)]="coauthor" (change)="addAuthor(author, false)"></mat-slide-toggle></td>
+    </tr>
+  </table>
+  <div class="btn-container">
+    <button (click)="onSubmit()">Submit</button>
+    <button (click)="onClose()">Close</button>
+  </div>
+</div>

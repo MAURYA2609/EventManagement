@@ -1,0 +1,40 @@
+@import "../dialog.module.css";
+
+.btn-container {
+  margin-top: 30px;
+}
+
+input {
+  margin: 0;
+  height: 30px;
+  width: 250px;
+}
+
+.search-result {
+  width: 250px;
+}
+
+#user-block {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(168, 168, 168, 0.089);
+  cursor: pointer;
+  padding: 5px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.336);
+  border-top: none;
+}
+
+#user-block div:nth-child(1) {
+  font-weight: 600;
+}
+
+#user-block div:nth-child(2) {
+  color: rgba(0, 0, 0, 0.5);
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+#user-block:hover {
+  background-color: rgba(5, 159, 219, 0.089);
+}

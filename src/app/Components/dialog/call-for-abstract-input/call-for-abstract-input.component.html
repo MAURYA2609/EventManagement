@@ -1,1 +1,23 @@
-<p>call-for-abstract-input works!</p>
+<div class="close-icon">
+  <i class="fa fa-times"></i>
+</div>
+<div class="input-container">
+  <label for="end_dt">End Date</label>
+  <input #end_dt type="datetime-local" name="end_dt" id="end_dt" placeholder="End Date" />
+  <label for="timezone">Timezone</label>
+  <input
+    #timezone
+    list="timezone-list"
+    id="event-timezone"
+    placeholder="Timezone">
+  <datalist id="timezone-list">
+    <option selected>
+      - - - Select an Option - - -
+  </option>
+    <option *ngFor="let timezone of timezones" value="{{ timezone }}">{{ timezone }}</option>
+  </datalist>
+  <div class="btn-container">
+    <button (click)="onSubmit(end_dt.value, timezone.value)">Submit</button>
+    <button (click)="onClose()">Close</button>
+  </div>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { CallForAbstractInputComponent } from '../call-for-abstract-input/call-for-abstract-input.component';
 
 @Component({
   selector: 'app-author-type-selector',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthorTypeSelectorComponent implements OnInit {
 
-  constructor() { }
+  author = false
+  coauthor = false
+
+  constructor(private dialogRef: MatDialogRef<CallForAbstractInputComponent>) { }
 
   ngOnInit(): void {
   }
+
+  addAuthor(e: any, type: any) {
+    if (type) this.author = e
+    else this.coauthor = e
+  }
+
+  onSubmit() {
+    this.dialogRef.close({ author: this.author, coauthor: this.coauthor })
+  }
+
+  onClose() {
+    this.dialogRef.close()
+  }
+
 
 }

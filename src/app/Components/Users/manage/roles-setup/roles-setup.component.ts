@@ -3,9 +3,9 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dial
 import { Router } from '@angular/router';
 import { EventService } from 'src/app/services/event/event.service';
 import { NotificationService } from 'src/app/services/notification/notification.service';
-//import { RolesInputComponent } from 'src/app/components/dialog/roles-setup/roles-setup.component';
+import { RolesSetupComponent as RolesInputComponent} from 'src/app/Components/dialog/roles-setup/roles-setup.component';
 import { CookieService } from 'ngx-cookie-service';
-//import { SearchUserComponent } from 'src/app/components/dialog/search-user/search-user.component';
+import { SearchUserComponent } from 'src/app/Components/dialog/search-user/search-user.component';
 import { not } from '@angular/compiler/src/output/output_ast';
 
 @Component({
@@ -76,7 +76,7 @@ export class RolesSetupComponent implements OnInit {
       code: "",
       color: "",
     }
-    /*const dialogRef = this.dialog.open(RolesInputComponent, dialogConfig)
+    const dialogRef = this.dialog.open(RolesInputComponent, dialogConfig)
 
     dialogRef.afterClosed().subscribe(
       data => {
@@ -93,7 +93,7 @@ export class RolesSetupComponent implements OnInit {
           )
         }
       }
-    )*/
+    )
   }
 
   updateRole(role: any) {
@@ -106,7 +106,7 @@ export class RolesSetupComponent implements OnInit {
       code: role.code,
       color: role.color,
     }
-    /*const dialogRef = this.dialog.open(RolesInputComponent, dialogConfig)
+    const dialogRef = this.dialog.open(RolesInputComponent, dialogConfig)
 
     dialogRef.afterClosed().subscribe(
       data => {
@@ -126,7 +126,7 @@ export class RolesSetupComponent implements OnInit {
           )
         }
       }
-    )*/
+    )
   }
 
   deleteRole(id: any) {
@@ -147,7 +147,7 @@ export class RolesSetupComponent implements OnInit {
     dialogConfig.autoFocus = true
     dialogConfig.width = '30%'
 
-   /* const dialogRef = this.dialog.open(SearchUserComponent, dialogConfig)
+    const dialogRef = this.dialog.open(SearchUserComponent, dialogConfig)
 
     dialogRef.afterClosed().subscribe(
       data => {
@@ -166,7 +166,7 @@ export class RolesSetupComponent implements OnInit {
       },
       error => {
         this.notificationService.showError(error.error, "Error")
-      })*/
+      })
   }
 
   deleteMember(user_id: any, role_id: any) {

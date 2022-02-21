@@ -1,0 +1,6 @@
+@import "../dialog.module.css";
+
+.input-container input {
+  height: 30px;
+  margin-bottom: 40px;
+}

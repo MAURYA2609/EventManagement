@@ -1,1 +1,19 @@
-<p>view-track works!</p>
+<div class="close-icon">
+  <i class="fa fa-times" (click)="onClose()"></i>
+</div>
+<div class="input-container">
+  <table>
+    <tr>
+      <th>Name</th>
+      <td>{{ data.title }}</td>
+    </tr>
+    <tr>
+      <th>Code</th>
+      <td>{{data.code}}</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td>{{data.description}}</td>
+    </tr>
+  </table>
+</div>
