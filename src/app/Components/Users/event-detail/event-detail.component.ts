@@ -27,11 +27,9 @@ export class EventDetailComponent implements OnInit {
 
   constructor(private router: Router, private eventService: EventService) {
     this.submitAbstractUrl = this.router.url + "/submit-abstract"
-    console.log(this.submitAbstractUrl)
     this.manageEventUrl = this.router.url + "/manage"
     eventService.getEventDetails(this.router.url.split('/').pop()).subscribe(
       data => {
-        console.log(data)
         this.setDataFromObj(data)
       },
       error => {

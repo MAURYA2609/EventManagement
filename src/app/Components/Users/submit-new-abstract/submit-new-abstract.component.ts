@@ -5,8 +5,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { AbstractService } from 'src/app/services/abstract/abstract.service';
 import { NotificationService } from 'src/app/services/notification/notification.service';
 import { TrackService } from 'src/app/services/track/track.service';
-//import { AuthorTypeSelectorComponent } from '../../dialog/author-type-selector/author-type-selector.component';
-//import { SearchAuthorComponent } from '../../dialog/search-author/search-author.component';
+import { AuthorTypeSelectorComponent } from '../../dialog/author-type-selector/author-type-selector.component';
+import { SearchAuthorComponent } from '../../dialog/search-author/search-author.component';
 
 @Component({
   selector: 'app-submit-new-abstract',
@@ -39,7 +39,7 @@ export class SubmitNewAbstractComponent implements OnInit {
           } else this.tracks = data
         },
         error => {
-          this.notificationService.showError(error.error.error, "Error")
+          this.notificationService.showError(error.error.error, "Error fetching track")
         }
       )
     }
@@ -73,7 +73,7 @@ export class SubmitNewAbstractComponent implements OnInit {
     dialogConfig.disableClose = true
     dialogConfig.autoFocus = true
     dialogConfig.width = '30%'
-    /*const dialogRef = this.dialog.open(AuthorTypeSelectorComponent, dialogConfig)
+    const dialogRef = this.dialog.open(AuthorTypeSelectorComponent, dialogConfig)
     dialogRef.afterClosed().subscribe(
       res => {
         if (res.author && res.coauthor) {
@@ -100,7 +100,7 @@ export class SubmitNewAbstractComponent implements OnInit {
           this.authorsList.push(temporaryObj)
         }
       }
-    )*/
+    )
   }
 
   addUser() {
@@ -108,7 +108,7 @@ export class SubmitNewAbstractComponent implements OnInit {
     dialogConfig.disableClose = true
     dialogConfig.autoFocus = true
     dialogConfig.width = '30%'
-    /*const dialogRef = this.dialog.open(SearchAuthorComponent, dialogConfig)
+    const dialogRef = this.dialog.open(SearchAuthorComponent, dialogConfig)
     dialogRef.afterClosed().subscribe(
       res => {
         if (res.author && res.coauthor) {
@@ -134,7 +134,7 @@ export class SubmitNewAbstractComponent implements OnInit {
           this.authorsList.push(temporaryObj)
         }
       }
-    )*/
+    )
   }
 
   submitAbstract(title: any, content: any, contributionType: any, comments: any, track_id: any) {

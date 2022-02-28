@@ -8,8 +8,8 @@ export class TrackService {
 
   constructor(private webRequestService: WebRequestService) { }
 
-  createNewTrack(event_id: any, objToSend: any) {
-    return this.webRequestService.post(`events/${ event_id }/tracks/create`, objToSend)
+  createNewTrack(eid: any, objToSend: any) {
+    return this.webRequestService.post(`events/${ eid }/tracks/create`, objToSend)
   }
 
   trackList(event_id: any, token: any) {

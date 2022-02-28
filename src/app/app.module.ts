@@ -12,6 +12,7 @@ import { ManageModule } from './Components/Users/manage/manage.module';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { DialogModule } from './Components/dialog/dialog.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -29,9 +30,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     HttpClientModule,
     MatDialogModule,
     ManageModule,
-    DialogModule
+    DialogModule,
+    ToastrModule.forRoot()
   ],
-  providers: [CookieService],
+  providers: [CookieService,ToastrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

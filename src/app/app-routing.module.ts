@@ -128,7 +128,7 @@ const routes: Routes = [
   {
     path: 'event/:id/manage',
     component: ManageEventComponent,
-     canActivate: [AdminAuthGuard],
+    canActivate: [AdminAuthGuard],
     children: [
       
       {

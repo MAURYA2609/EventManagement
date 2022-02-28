@@ -30,7 +30,8 @@ export class ManageEventComponent implements OnInit {
   constructor(private router: Router, private cookie: CookieService, private eventService: EventService) {
     this.url = this.router.url
     const token = cookie.get('jwt')
-    eventService.getEventManageBase({ token: token }, this.url.split('/')[2]).subscribe(
+    console.log(this.url)
+    eventService.getEventDetails( this.url.split('/')[2]).subscribe(
       data => {
         this.fetchDataFromObj(data)
         console.log(this.manageDetailObj)
@@ -45,8 +46,8 @@ export class ManageEventComponent implements OnInit {
   }
 
   fetchDataFromObj(data: any) {
-    this.manageDetailObj.event_title = data.event_title
-    this.manageDetailObj.event_duration = data.event_duration
+    this.manageDetailObj.event_title = data.title
+    this.manageDetailObj.event_duration = data.start_time
     this.manageDetailObj.creator_email = data.creator_email
   }
 
