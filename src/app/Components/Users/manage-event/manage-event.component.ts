@@ -16,6 +16,7 @@ export class ManageEventComponent implements OnInit {
   materialFlag = true
   rolesSetupFlag = false
   logsFlag = false
+  regFlag = false
 
   sliderIconFlag = false
 
@@ -79,18 +80,28 @@ export class ManageEventComponent implements OnInit {
     this.materialFlag = true
     this.rolesSetupFlag = false
     this.logsFlag = false
+    this.regFlag=false
   }
 
   rolesSetupTabClicked() {
     this.materialFlag = false
     this.rolesSetupFlag = true
     this.logsFlag = false
+    this.regFlag=false
   }
 
   logsTabClicked() {
     this.materialFlag = false
     this.rolesSetupFlag = false
     this.logsFlag = true
+    this.regFlag=false
+  }
+
+  regTabClicked() {
+    this.materialFlag = false
+    this.rolesSetupFlag = false
+    this.regFlag=true
+    this.logsFlag = false
   }
 
   openSlider() {

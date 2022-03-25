@@ -43,6 +43,12 @@ import { TrackPermissionComponent } from './Components/Users/manage/track-permis
 import { SubmitNewAbstractComponent } from './Components/Users/submit-new-abstract/submit-new-abstract.component';
 import { AuthenticationGuard } from './services/authentication.guard';
 import { ProgressComponent } from './Components/progress/progress.component';
+import { RegistrationComponent } from './Components/Users/manage/registration/registration.component';
+import { BasicFormComponent } from './Components/Users/manage/basic-form/basic-form.component';
+import { EditFormComponent } from './Components/Users/manage/edit-form/edit-form.component';
+import { ConfigureFormComponent } from './Components/Users/manage/configure-form/configure-form.component';
+import { CreateFormComponent } from './Components/Users/manage/create-form/create-form.component';
+import { EventRegistrationComponent } from './Components/Users/event-registration/event-registration.component';
 
 const routes: Routes = [
   {
@@ -108,6 +114,14 @@ const routes: Routes = [
     canActivate: [AuthenticationGuard]
   },
   {
+    path: 'event/:id/register',
+    component: EventRegistrationComponent
+  },
+  {
+    path: 'event/:id/abstracts',
+    component: AbstractListComponent
+  },
+  {
     path:':username/edit',
     component: UserEditComponent,
     children: [
@@ -130,12 +144,6 @@ const routes: Routes = [
     component: ManageEventComponent,
     canActivate: [AdminAuthGuard],
     children: [
-      
-      {
-        path: 'abstracts/list',
-        component: AbstractListComponent
-      }
-     ,
       {
         path: 'settings',
         component: SettingsComponent,
@@ -156,7 +164,26 @@ const routes: Routes = [
         path: 'abstracts',
         component: CallForAbstractComponent,
       },
-      
+      {
+        path: 'registration',
+        component: RegistrationComponent,
+      },
+      {
+        path: 'registration/:fid/basicform',
+        component: BasicFormComponent
+      },
+      {
+        path: 'registration/:fid/configureform',
+        component: ConfigureFormComponent
+      },
+      {
+        path: 'registration/createform',
+        component: CreateFormComponent
+      },
+      {
+        path: 'registration/:fid',
+        component: EditFormComponent
+      },
       {
         path: 'logs',
         component: LogComponent,
@@ -191,6 +218,5 @@ export const routingModule = [
   CategoryComponent, ResetPasswordComponent, VerifyEmailComponent, UserDetailComponent, UserEditComponent ,
   PersonalComponent, AffiliationComponent , CredentialsComponent, ShowErrorComponent , CreateNewEventComponent,
   EventDetailComponent, ManageEventComponent, EventListComponent ,InputTextRequiredComponent ,EventComponent ,
-  AbstractListComponent ,AbstractDetailComponent , SubmitNewAbstractComponent , ProgressComponent/*, SettingsComponent , ProtectionComponent ,MaterialsComponent ,RolesSetupComponent ,
-  CallForAbstractComponent ,LogComponent ,TracksComponent , TrackPermissionComponent*/
+  AbstractListComponent ,AbstractDetailComponent , SubmitNewAbstractComponent , ProgressComponent 
 ]

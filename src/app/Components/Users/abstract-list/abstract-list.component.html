@@ -23,28 +23,16 @@
         <tr>
           <th>ID</th>
           <th>Title</th>
-          <th>Status</th>
-          <th>Accepted Track</th>
-          <th>Submitted for Tracks</th>
-          <th>Reviewed for Tracks</th>
-          <th>Accepted Type</th>
-          <th>Submitted Type</th>
-          <th></th>
+          <th>Comments</th>
+          <th>Contribution Type</th>
+          <th>Submit date</th>
         </tr>
         <tr *ngFor="let abstract of abstractList ">
-          <td id="id">{{abstract.id}}</td>
+          <td id="id">{{abstract.absid}}</td>
           <td id="title"><a [routerLink]="">{{abstract.title}}</a></td>
-          <td
-            id="status"
-            [ngStyle]="{ 'border-color': abstract.is_accepted ? 'green' : abstract.is_rejected ? 'red' : 'grey', 'color': abstract.is_accepted ? 'green' : abstract.is_rejected ? 'red' : 'grey' }">
-            <div>{{abstract.status}}</div>
-          </td>
-          <td id="accepted-track">{{abstract.accepted_track}}</td>
-          <td id="submitted-track">{{abstract.submitted_track}}</td>
-          <td id="reviewed-track">{{abstract.reviewed_track}}</td>
-          <td id="accepted-type">{{abstract.accepted_type}}</td>
-          <td id="submitted-type">{{abstract.submitted_type}}</td>
-          <td id="icon"><i class="fa fa-long-arrow-right"></i></td>
+          <td id="accepted-track">{{abstract.comments}}</td>
+          <td id="submitted-track">{{abstract.contribution_type}}</td>
+          <td id="reviewed-track">{{abstract.submitted_dt}}</td>
         </tr>
       </table>
     </div>

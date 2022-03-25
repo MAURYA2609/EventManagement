@@ -40,6 +40,17 @@
     </div>
   </a>
   <hr>
+  <a [routerLink]="['registration']">
+    <div id="registration" [ngClass]="regFlag ? 'active' : ''" (click)="regTabClicked()" >
+      <td>
+        <i class="fa fa-user"></i>
+      </td>
+      <td>
+        Registration
+      </td>
+    </div>
+  </a>
+  <hr>
   <div id="event" (click)="eventTabClicked()">
     <td>
       <i
@@ -119,9 +130,8 @@
       {{ manageDetailObj.event_title }}
     </span>
     <span id="event-date">
-      {{ manageDetailObj.event_duration }}
+      starts on {{ manageDetailObj.event_duration | date}}
     </span>
-    <div id="created-by">Created by Indico Admin ({{ manageDetailObj.creator_email }})</div>
   </div>
   <router-outlet></router-outlet>
 </div>

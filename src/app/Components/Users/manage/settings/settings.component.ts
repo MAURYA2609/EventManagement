@@ -40,16 +40,16 @@ export class SettingsComponent implements OnInit {
   scheduleObj = {
     start_dt: "",
     end_dt: "",
-    date: "",
-    time: "",
+    start_time: "",
+    end_time: "",
     timezone: "",
     set: 1,
     token: ""
   }
 
   locationObj = {
-    room: "",
-    venue: "",
+    room_name: "",
+    veneue_id: "",
     address: "",
     map_url: "",
     set: 2,
@@ -71,8 +71,8 @@ export class SettingsComponent implements OnInit {
   }
 
   extraObj = {
-    keywords: [""],
-    label: "",
+    keyword: [""],
+    e_type: "",
     set: 5,
     token: ""
   }
@@ -87,6 +87,7 @@ export class SettingsComponent implements OnInit {
     this.eventService.getManageEventDetail({ token: this.token }, this.url.split('/')[2]).subscribe(
       data => {
         this.fetchDataFromObj(data)
+        console.log(data)
       },
       error => {
         console.log(error)
@@ -195,7 +196,7 @@ export class SettingsComponent implements OnInit {
     }
     else if (e == "extra") {
       this.extraObj.token = this.token
-      this.extraObj.keywords = this.keywords
+      this.extraObj.keyword = this.keywords
       this.eventService.setManageEventDetail(this.extraObj, this.url.split('/')[2]).subscribe(
         data => {
           console.log(data)
@@ -219,19 +220,19 @@ export class SettingsComponent implements OnInit {
   fetchDataFromObj(data: any) {
     this.homeObj.title = data.title
     this.homeObj.description = data.description
-    this.scheduleObj.date = data.date
-    this.scheduleObj.time = data.time
+    this.scheduleObj.start_time = data.start_time
+    this.scheduleObj.end_time = data.end_time
     this.scheduleObj.timezone = data.timezone
-    this.locationObj.room = data.room
-    this.locationObj.venue = data.venue
+    this.locationObj.room_name = data.room_name
+    this.locationObj.veneue_id = data.veneue_id
     this.locationObj.address = data.address
     this.locationObj.map_url = data.map_url
-    this.chairpersonObj.chairpersons = data.chairperson
+    //this.chairpersonObj.chairpersons = data.chairperson
     this.contactObj.additional_info = data.additional_info
     this.contactObj.email = data.email
     this.contactObj.phone = data.phone
-    this.extraObj.keywords = data.keywords
-    this.extraObj.label = data.label
+    this.extraObj.keyword = data.keyword
+    this.extraObj.e_type = data.e_type
   }
 
 }

@@ -50,6 +50,7 @@ export class AbstractListComponent implements OnInit {
           this.notificationService.showInfo(this.message, "Info")
         } else {
           this.abstractList = data
+          console.log(data)
         }
       },
       error => {

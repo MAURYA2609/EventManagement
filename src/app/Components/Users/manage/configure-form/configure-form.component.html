@@ -1,0 +1,47 @@
+<div class="register-container">
+    <div class="title-header">
+      Add field
+      <hr>
+    </div>
+    <div class="action-box">
+        <div class="section">
+            <label class="col-6">Field Name</label>
+        <input
+        type="text"
+        name="title"
+        [(ngModel)]="newfield.title"
+        required /><br>
+        </div>
+    </div>
+    <div class="action-box">
+        <div class="section">
+            <label class="col-6">Field type</label>
+            <select [(ngModel)]="newfield.type" name="type">
+                <option *ngFor="let t of tt" [value]="t.type">
+                  {{t.names}}
+                </option>
+              </select>
+              <br>
+        </div>
+    </div>
+    <div class="action-box">
+        <div class="section">
+            <label class="col-6">Field Decription</label>
+        <input
+        type="text"
+        name="title"
+        [(ngModel)]="newfield.description"
+        required /><br>
+        </div>
+    </div>
+    <div class="action-box">
+        <div class="section">
+            <label class="col-6">Enable</label>
+        <mat-slide-toggle (change)="setEnable($event)"></mat-slide-toggle>
+        </div>
+    </div>
+    <div class="btn-container">
+        <button type="submit" text="Add" alignment="center"  (click)="addField()">Add Field</button>
+    </div>
+  </div>
+  

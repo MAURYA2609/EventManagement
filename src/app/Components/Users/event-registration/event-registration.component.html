@@ -1,0 +1,30 @@
+<div class="register-container">
+    <div class="title-header">
+      
+      <hr>
+    </div>
+    <div class="action-box">
+        <div class="section" *ngFor="let form of forms">
+            <label class="col-6">{{form.title}} *</label>
+            <input
+            type="form.type"
+            name="form.title"
+            [(ngModel)]="form.input"
+            ng-required="true" />
+        </div>
+        <div class="section" *ngFor="let form of regForm">
+            <label class="col-6">{{form.title}} </label>
+            <input
+            type="form.type"
+            name="form.title"
+            [(ngModel)]="form.input"
+            ng-required="form.is_enabled" />
+        </div>
+   
+    <div class="btn-container">
+        <button type="submit" text="Save" alignment="center" (click)="saveFormdata()">Save</button>
+    </div>
+    
+    </div>
+  </div>
+  

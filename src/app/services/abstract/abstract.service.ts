@@ -9,10 +9,10 @@ export class AbstractService {
   constructor(private webReqService: WebRequestService) { }
 
   submitNewAbstract(event_id: String, formData: any) {
-    return this.webReqService.post(`events/${event_id}/abstracts/submit`, formData)
+    return this.webReqService.post(`events/${event_id}/submit`, formData)
   }
-  viewAllAbstract(event_id: String, objToSend: any) {
-    return this.webReqService.post(`events/${event_id}/abstracts/list`, objToSend)
+  viewAllAbstract(id: String, objToSend: any) {
+    return this.webReqService.post(`events/${id}/abstracts`, objToSend)
   }
   fetchAbstract(event_id: String, abstract_id: String, objToSend: any) {
     return this.webReqService.post(`events/${event_id}/abstracts/${abstract_id}`, objToSend)

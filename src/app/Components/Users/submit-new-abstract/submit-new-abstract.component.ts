@@ -37,6 +37,7 @@ export class SubmitNewAbstractComponent implements OnInit {
             this.fetchData(data)
             this.notificationService.showInfo(this.message, "Info")
           } else this.tracks = data
+          console.log(data)
         },
         error => {
           this.notificationService.showError(error.error.error, "Error fetching track")
@@ -137,14 +138,13 @@ export class SubmitNewAbstractComponent implements OnInit {
     )
   }
 
-  submitAbstract(title: any, content: any, contributionType: any, comments: any, track_id: any) {
-    console.log(title, content, contributionType, comments, track_id)
-    if (title && content && contributionType && this.authorsList.length != 0 && track_id) {
+  submitAbstract(title: any,  contributionType: any, comments: any, track_id: any) {
+    console.log(title, contributionType, comments, track_id)
+    if (title &&  contributionType && this.authorsList.length != 0 && track_id) {
       const formData = new FormData()
       formData.append("file", this.files)
       formData.append("token", this.token)
       formData.append("title", title)
-      formData.append("description", content)
       formData.append("contribution_type", contributionType)
       for (let i = 0; i < this.authorsList.length; i++) {
         formData.append("authors_list", this.authorsList[i])

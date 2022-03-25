@@ -30,7 +30,7 @@
           <ul>
             <li><a routerLink="/event/1">Overview</a></li>
             <li><a routerLink="/event/1/programs">Scientific Program</a></li>
-            <li><a routerLink="/event/1/abstracts">Call for Abstracts</a></li>
+            <li><a routerLink="/event/3/abstracts">Call for Abstracts</a></li>
           </ul>
         </div>
         <div class="contacts">
@@ -81,8 +81,13 @@
             </div>
           </div>
         </div>
-        <div class="event-information" [innerHtml]="additional_info">
+        <div class="abstract-submission-container">
+          <div class="abstract-submission-text">
+            <p>Application for this event is currently open</p>
+          </div>
+          <button class="" type="submit" [routerLink]="registerUrl"> Register </button>
         </div>
+        
       </div>
     </div>
     <div class="abstract-submission-container">

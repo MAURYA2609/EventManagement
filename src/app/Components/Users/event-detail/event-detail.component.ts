@@ -11,6 +11,7 @@ export class EventDetailComponent implements OnInit {
 
   isRequired = true
   submitAbstractUrl = ""
+  registerUrl=""
   manageEventUrl = ""
   event_title = ""
   event_duration = ""
@@ -27,6 +28,7 @@ export class EventDetailComponent implements OnInit {
 
   constructor(private router: Router, private eventService: EventService) {
     this.submitAbstractUrl = this.router.url + "/submit-abstract"
+    this.registerUrl= this.router.url + "/register"
     this.manageEventUrl = this.router.url + "/manage"
     eventService.getEventDetails(this.router.url.split('/').pop()).subscribe(
       data => {

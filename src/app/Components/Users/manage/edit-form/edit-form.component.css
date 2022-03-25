@@ -1,0 +1,49 @@
+@import "../manage.module.css";
+
+.register-container {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section:not(:first-child) {
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid #bbb;
+}
+.action-box > .section {
+    overflow: hidden;
+    align-items: center;
+    overflow: visible;
+}
+.text {
+    flex-grow: 1;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+.text .label {
+    color: #777;
+}
+.action-box > .section > .text > .label {
+    font-weight: bold;
+}
+.action-box {
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+    background: #f9f9f9;
+    color: #999;
+}
+
+.action-box {
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    padding: 10px;
+    width: 100%;
+}

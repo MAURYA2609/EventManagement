@@ -84,4 +84,26 @@ export class EventService {
     return this.webReqService.post(`events/${event_id}/manage/${role_id}/member/delete`, objToSend)
   }
 
+  createForm(objToSend:any ,eid:any){
+    return this.webReqService.post(`events/${eid}/forms/create`, objToSend)
+  }
+  updateForm(objToSend:any,eid:any,formid:any){
+    return this.webReqService.post(`events/${eid}/update/${formid}`,objToSend)
+  }
+
+  getAllForms(eid:any){
+    return this.webReqService.get(`events/${eid}/allforms`)
+  }
+  getForm(eid:any,fid:any){
+    return this.webReqService.get(`events/${eid}/forms/${fid}`)
+  }
+  addField(objToSend:any,eid:any,fid:any){
+    return this.webReqService.post(`events/${eid}/${fid}/create`,objToSend)
+  }
+  getRegistrationForm(eid:any){
+    return this.webReqService.get(`events/${eid}/getRegForm/items`)
+  }
+  registerUser(objToSend:any,eid:any){
+    return this.webReqService.post(`events/${eid}/registration`,objToSend)
+  }
 }

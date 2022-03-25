@@ -56,15 +56,15 @@
         </div>
         <div>
           <tr>
-            <td>Date</td>
-            <td>{{ scheduleObj.date }}</td>
+            <td>start_time</td>
+            <td>{{ scheduleObj.start_time | date}}</td>
           </tr>
           <tr>
-            <td>Time</td>
-            <td>{{ scheduleObj.time }}</td>
+            <td>end_time</td>
+            <td>{{ scheduleObj.end_time | date}}</td>
           </tr>
           <tr>
-            <td>Timezone</td>
+            <td>timezone</td>
             <td>{{ scheduleObj.timezone }}</td>
           </tr>
         </div>
@@ -76,27 +76,27 @@
     <div
       class="edit-container"
       [ngStyle]="{ 'display': scheduleBtn % 2 ? null : 'none' }">
-      <label for="start_dt">Start Date</label>
+      <label for="start_dt">Start start_time</label>
       <input
-        type="datetime-local"
+        type="start_time-local"
         name="start_dt"
-        placeholder="Start Date"
+        placeholder="start_time"
         id="start_dt"
         [(ngModel)]="scheduleObj.start_dt"
         (change)="addData(scheduleObj.start_dt)" />
-      <label for="end_dt">End Date</label>
+      <label for="end_dt">End start_time</label>
       <input
-        type="datetime-local"
+        type="start_time-local"
         name="end_dt"
-        placeholder="End Date"
+        placeholder="End_time"
         id="end_dt"
         [(ngModel)]="scheduleObj.end_dt"
         (change)="addData(scheduleObj.end_dt)" />
-      <label for="timezone">Timezone</label>
+      <label for="timezone">timezone</label>
       <input
         list="timezone-list"
         id="event-timezone"
-        placeholder="Timezone"
+        placeholder="timezone"
         [(ngModel)]="scheduleObj.timezone"
         (change)="addData(scheduleObj.timezone)">
       <datalist id="timezone-list">
@@ -119,12 +119,12 @@
         </div>
         <div>
           <tr>
-            <td>Room</td>
-            <td>{{ locationObj.room ? locationObj.room : emptyVariable }}</td>
+            <td>Room_name</td>
+            <td>{{ locationObj.room_name ? locationObj.room_name : emptyVariable }}</td>
           </tr>
           <tr>
-            <td>Venue</td>
-            <td>{{ locationObj.venue ? locationObj.venue : emptyVariable }}</td>
+            <td>veneue_id</td>
+            <td>{{ locationObj.veneue_id ? locationObj.veneue_id : emptyVariable }}</td>
           </tr>
           <tr>
             <td>Address</td>
@@ -143,22 +143,22 @@
     <div
       class="edit-container"
       [ngStyle]="{ 'display': locationBtn % 2 ? null : 'none' }">
-      <label for="room">Room</label>
+      <label for="room_name">Room_name</label>
       <input
         type="text"
-        name="room"
-        placeholder="Room"
-        id="room"
-        [(ngModel)]="locationObj.room"
-        (change)="addData(locationObj.room)" />
-        <label for="venue">Venue</label>
+        name="room_name"
+        placeholder="Room_name"
+        id="room_name"
+        [(ngModel)]="locationObj.room_name"
+        (change)="addData(locationObj.room_name)" />
+        <label for="veneue_id">veneue_id</label>
         <input
           type="text"
-          name="venue"
-          placeholder="Venue"
-          id="venue"
-          [(ngModel)]="locationObj.venue"
-          (change)="addData(locationObj.venue)" />
+          name="veneue_id"
+          placeholder="veneue_id"
+          id="veneue_id"
+          [(ngModel)]="locationObj.veneue_id"
+          (change)="addData(locationObj.veneue_id)" />
         <label for="address">Address</label>
         <input
           type="text"
@@ -181,7 +181,7 @@
         </div>
     </div>
     <hr>
-    <div class="table-row">
+    <!-- <div class="table-row">
       <div>
         <div>
           <i class="fa fa-users"></i>
@@ -192,7 +192,7 @@
             <div id="chairperson-list" *ngFor="let chairperson of chairpersons; let i = index">
               <td style="display: flex; width: 200px; justify-content: space-between;">
                 {{ chairperson }}
-                <i class="fa fa-times" style="color: red; cursor: pointer;" (click)="popName(i)"></i>
+                <i class="fa fa-end_times" style="color: red; cursor: pointer;" (click)="popName(i)"></i>
               </td>
             </div>
           </tr>
@@ -250,7 +250,7 @@
         </div>
       </div>
     </div>
-    <hr>
+    <hr> -->
     <div class="table-row">
       <div>
         <div>
@@ -260,14 +260,14 @@
           <tr>
             <td>Keywords</td>
             <td>
-              <span id="keyword" *ngFor="let keyword of extraObj.keywords">
+              <span id="keyword" *ngFor="let keyword of extraObj.keyword">
                 <span style="color: white; letter-spacing: 0.5px;">{{ keyword }}</span>
               </span>
             </td>
           </tr>
           <tr>
-            <td>Label</td>
-            <td>{{ extraObj.label ? extraObj.label : emptyVariable }}</td>
+            <td>Event Type</td>
+            <td>{{ extraObj.e_type ? extraObj.e_type : emptyVariable }}</td>
           </tr>
         </div>
       </div>
@@ -286,14 +286,14 @@
         id="keyword"
         [(ngModel)]="keyword"
         (change)="addKeyword(keyword)" />
-        <label for="label">Label</label>
+        <label for="Event type">Event Type</label>
         <input
           type="text"
-          name="label"
-          placeholder="Label"
+          name="e_type"
+          placeholder="Event type"
           id="label"
-          [(ngModel)]="extraObj.label"
-          (change)="addData(extraObj.label)" />
+          [(ngModel)]="extraObj.e_type"
+          (change)="addData(extraObj.e_type)" />
         <div class="btn-container">
           <button (click)="submitBtn('extra')">Submit</button>
           <button (click)="cancelBtn('extra')">Cancel</button>

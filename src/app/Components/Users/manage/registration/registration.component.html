@@ -1,0 +1,22 @@
+<div class="abstract-list-container">
+<div class="abstract-list">
+    <table>
+      <tr>
+        <th>Form title</th>
+        <th>Form Id</th>
+        <th>Configure</th>
+      </tr>
+      <tr *ngFor="let form of forms ">
+        <td id="id">{{form.title}}</td>
+        <td id="title">{{form.form_id}}</td>
+        <td id="form details"><a [routerLink]="form.form_id">Configure</a></td>
+      </tr>
+    </table>
+  </div>
+  <div class="title-header">
+    <a [routerLink]="['createform']">
+      Create Form
+    </a>
+    <hr>
+  </div>
+</div>

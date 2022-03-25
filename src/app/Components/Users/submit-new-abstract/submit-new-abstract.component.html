@@ -11,14 +11,7 @@
               <input type="text" name="abstract_title" id="abstract-title" placeholder="Title" #title />
             </td>
           </tr>
-          <tr class="abstract-content">
-            <td>
-              <label for="abstract-content">Content</label><span class="required-star">*</span>
-            </td>
-            <td>
-              <ckeditor #content></ckeditor>
-            </td>
-          </tr>
+          
           <tr class="abstract-contribution-type">
             <td>
               <label for="abstract-contribution-type">Contribution Type</label><span class="required-star">*</span>
@@ -96,14 +89,14 @@
             <td>
               <select name="abstract_track" id="abstract-track" #track_id>
                 <option value="">- - - Select option - - -</option>
-                <option *ngFor="let track of tracks" value="{{track._id}}">{{ track.title }}</option>
+                <option value="new">new</option>
               </select>
             </td>
           </tr>
         </table>
       </div>
       <div class="submit">
-        <button (click)="submitAbstract(title.value, content.data, contributionType.value, comments.value, track_id.value)">Submit</button>
+        <button (click)="submitAbstract(title.value, contributionType.value, comments.value, track_id.value)">Submit</button>
       </div>
     </div>
   </div>

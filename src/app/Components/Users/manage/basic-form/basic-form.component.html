@@ -1,0 +1,47 @@
+  <div class="register-container">
+    <div class="title-header">
+      General form details
+      <hr>
+    </div>
+    <div class="action-box">
+        <div class="section">
+            <label class="col-6">Title</label>
+            <input
+            type="text"
+            name="title"
+            [(ngModel)]="form.title"
+            required /><br>
+        </div>
+    </div>
+    <div class="action-box">
+        <div class="section">
+            <label class="col-6">Introduction</label>
+            <input
+                type="text"
+                name="introduction"
+                [(ngModel)]="form.introduction"/><br>
+        </div>
+    </div>
+    <div class="action-box">
+        <div class="section">
+            <label class="col-6">Contact info</label>
+            <input
+            type="text"
+            name="contact_info"
+            [(ngModel)]="form.contact_info"/><br>
+        </div>
+    </div>
+    <div class="action-box">
+        <div class="section">
+            <label class="col-6">Registration Limit</label>
+            <input
+            type="text"
+            name="registration_limit"
+            [(ngModel)]="form.registration_limit"/><br>
+        </div>
+    </div>
+    <div class="btn-container">
+        <button type="submit" text="Save" alignment="center"  (click)="saveFormData()">Save</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,96 @@
+@import "../manage.module.css";
+
+@import "../manage.module.css";
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(4, 133, 219);
+}
+
+.abstract-list-container {
+  width: 60%;
+  margin: 30px auto;
+}
+
+.title-header {
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.678);
+}
+
+.title-header hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.11);
+  margin-top: 5px;
+}
+
+.operations-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#searchbox {
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  border-radius: 4px;
+  padding: 3px 5px;
+  padding-left: 10px;
+}
+
+#searchbox i {
+  margin-right: 10px;
+  margin-left: 5px;
+  color: rgba(0, 0, 0, 0.397);
+}
+
+#searchbox input {
+  width: 200px;
+  height: 25px;
+  outline: none;
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+tr{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+}
+
+tr:nth-child(1) {
+  color: rgb(43, 43, 43);
+  background-color: rgba(0, 0, 0, 0.068);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.11);
+}
+
+th, td {
+  padding: 20px 10px;
+  text-align: center;
+  width: 20%;
+}
+
+#title {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#status div {
+  border: 1px solid;
+  padding: 4px 7px;
+}
+
+#icon {
+  width: 10px;
+  height: 24px;
+  color: rgb(43, 101, 155);
+}
+
+
